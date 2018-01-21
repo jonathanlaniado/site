@@ -37,7 +37,13 @@ nav {
   text-transform: uppercase;
 }
 
-.nav-item:hover {}
+.nav-item {
+  color: inherit;
+}
+
+.nav-item:hover {
+  color: #EEEEEE;
+}
 
 .logo-container {
   align-items: center;
