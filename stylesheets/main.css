@@ -33,7 +33,7 @@ nav {
   font-weight: 600;
   letter-spacing: 4px;
   margin: 25px 3% 25px 3%;
-  text-decoration: none;
+  opacity: 75%;  text-decoration: none;
   text-transform: uppercase;
 }
 
