@@ -19,7 +19,7 @@ jQuery.ajax({
     });
     paths.shift();
     console.log(paths.length);
-    var rand = getRand(0, paths.length);
+    var rand = getRand(0, paths.length - 1);
     $('html').css('background-image', 'url(' + paths[22] + ')');
     $('html').css('background-position', 'center');
     $('html').css('background-size', 'center');
