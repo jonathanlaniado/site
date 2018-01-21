@@ -20,7 +20,7 @@ body {
   letter-spacing: 0.3px;
 }
 
-nav {
-  text-decoration: none !important;
+nav * {
+  text-decoration: none;
   text-transform: uppercase;
 }
