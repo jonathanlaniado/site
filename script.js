@@ -12,6 +12,7 @@ jQuery.ajax({
     },
   })
   .done(function(data, textStatus, jqXHR) {
+    console.log(textStatus);
     var paths = [];
     Object.keys(data).forEach(function(key) {
       var val = data[key]["path"];
