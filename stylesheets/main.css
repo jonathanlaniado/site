@@ -10,9 +10,10 @@
   }
   .nav-item {
     display: none;
-  }.logo {
-  width: 75% !important;
-}
+  }
+  .logo {
+    width: 75% !important;
+  }
 }
 
 *, *:before, *:after {
@@ -61,7 +62,7 @@ nav {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 80vh;
+  height: 60vh;
   justify-content: center;
   width: 100%;
   position: relative;
