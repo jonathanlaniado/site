@@ -5,3 +5,13 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+body {
+    padding-top: 20px;
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "SFNSText", "Roboto", '.HelveticaNeueDeskInterface-Light', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
