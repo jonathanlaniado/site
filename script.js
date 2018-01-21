@@ -9,13 +9,15 @@ jQuery.ajax({
     },
   })
   .done(function(data, textStatus, jqXHR) {
-    bgImages.push(data);
-    console.log(bgImages);
+    var paths = JSON.stringify(JSON.parse(data).paths);
+    console.log(paths);
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
   })
-  .always(function() {});
+  .always(function() {
+
+  });
 
 
 // $.ajax({
