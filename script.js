@@ -13,12 +13,11 @@ jQuery.ajax({
     //iterate through object keys
     Object.keys(example).forEach(function(key) {
       //get the value of name
-      var val = example[key]["name"];
+      var val = example[key]["path"];
       //push the name string in the array
       arrNames.push(val);
     });
     console.log(arrNames);
-    console.log(paths);
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
