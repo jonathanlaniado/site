@@ -29,11 +29,6 @@ jQuery.ajax({
     console.log("HTTP Request Failed");
   });
 
-$(document).ready(function() {
+document.getElementById('hb').onclick = function() {
 
-  $(document).on('click', function(event) {
-    $target = $(event.target);
-    $target.addClass('is-active');
-  });
-
-})
+}
