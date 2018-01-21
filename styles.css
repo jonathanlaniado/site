@@ -20,6 +20,13 @@ body {
   letter-spacing: 0.3px;
 }
 
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
 nav a {
   text-decoration: none;
   text-transform: uppercase;
