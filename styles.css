@@ -20,4 +20,6 @@ body {
   letter-spacing: 0.3px;
 }
 
-nav {}
+nav {
+  text-transform: capitalize;
+}
