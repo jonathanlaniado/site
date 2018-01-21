@@ -110,5 +110,6 @@
 
 .menu-selected {
   display: block !important;
+  position: absolute;
   z-index: 0;
 }
