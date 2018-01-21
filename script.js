@@ -1,6 +1,6 @@
 // calculates a random number between the specified values
 function getRand(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 // sets a random picture from assets/backgrounds as the homepage background
@@ -19,8 +19,8 @@ jQuery.ajax({
     });
     paths.shift();
     console.log(paths.length);
-    var rand = getRand(0, paths.length - 1);
-    $('html').css('background-image', 'url(' + paths[22] + ')');
+    var rand = getRand(0, paths.length);
+    $('html').css('background-image', 'url(' + paths[rand] + ')');
     $('html').css('background-position', 'center');
     $('html').css('background-size', 'center');
     $('html').css('background-repeat', 'no-repeat');
