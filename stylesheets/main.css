@@ -1,15 +1,18 @@
-@media (min-width: 1200px) {
+@media (min-width: 814px) {
   .hamburger {
     display: none !important;
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 813px) {
   nav {
     justify-content: flex-end !important;
   }
   .nav-item {
     display: none;
+  }
+  .logo {
+    width: 75% !important;
   }
 }
 
