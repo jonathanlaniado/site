@@ -110,3 +110,8 @@
   position: absolute;
   z-index: 1;
 }
+
+.burger-item {
+  position: absolute;
+  z-index: 1;
+}
