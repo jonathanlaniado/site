@@ -12,14 +12,12 @@ jQuery.ajax({
     },
   })
   .done(function(data, textStatus, jqXHR) {
-    console.log(textStatus);
     var paths = [];
     Object.keys(data).forEach(function(key) {
       var val = data[key]["path"];
       paths.push(val);
     });
     paths.shift();
-
     var rand = getRand(0, paths.length);
     $('html').css('background-image', 'url(' + paths[rand] + ')');
     $('html').css('background-position', 'center');
