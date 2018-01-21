@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -12,14 +12,12 @@ html {
 }
 
 body {
-    max-width: 1000px;
-    width: 80%;
-    margin: 0 auto;
-    font-family: -apple-system, BlinkMacSystemFont, "SFNSText", "Roboto", '.HelveticaNeueDeskInterface-Light', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.3px;
+  max-width: 1000px;
+  width: 80%;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "SFNSText", "Roboto", '.HelveticaNeueDeskInterface-Light', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.3px;
 }
 
-nav {
-  
-}
+nav {}
