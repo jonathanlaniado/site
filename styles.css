@@ -28,10 +28,10 @@ nav {
 }
 
 .nav-item {
-  margin: 25px;
+  margin: 25px 10% 25px 10%;
   color: white;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 2.5px;
   text-decoration: none;
   text-transform: uppercase;
