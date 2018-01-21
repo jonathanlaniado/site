@@ -30,6 +30,6 @@ jQuery.ajax({
   });
 
 $('#hb').click(function() {
-  $(this).removeClass('is-active');
-  $(this).addClass('is-active');
+  $('#hb').removeClass('is-active');
+  $('#hb').addClass('is-active');
 });
