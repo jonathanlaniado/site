@@ -114,7 +114,7 @@
 .burger-item-container {
   height: inherit;
   display: flex;
-  flex-direction: column nowrap;
+  flex-direction: column wrap;
   justify-content: center;
   align-items: center;
 }
