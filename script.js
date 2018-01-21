@@ -9,21 +9,15 @@ jQuery.ajax({
     },
   })
   .done(function(data, textStatus, jqXHR) {
-    var arrNames = [];
-    //iterate through object keys
+    var paths = [];
     Object.keys(data).forEach(function(key) {
-      //get the value of name
       var val = data[key]["path"];
-      //push the name string in the array
-      arrNames.push(val);
+      paths.push(val);
     });
-    console.log(arrNames);
+    console.log(paths);
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
-  })
-  .always(function() {
-
   });
 
 
