@@ -1,0 +1,7 @@
+html {
+  background: url(assets/backgrounds/2000x1333-norway-grayscale.jpeg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
