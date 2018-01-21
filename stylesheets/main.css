@@ -63,15 +63,15 @@ nav {
 }
 
 .logo-container {
-  /* align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: 80vh;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: auto;
+  height: 80vh;
   width: 40%;
   margin: 0 auto;
-  position: relative;
-  z-index: auto; */
 }
 
 .logo {
