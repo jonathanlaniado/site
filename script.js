@@ -20,7 +20,7 @@ jQuery.ajax({
     paths.shift();
 
     $(document).ready(function() {
-      var rand = getRand(0, bgImages.length);
+      var rand = getRand(0, paths.length);
       $('html').css('background-image', 'url(' + paths[rand] + ')');
       $('html').css('background-position', 'center');
       $('html').css('background-size', 'center');
