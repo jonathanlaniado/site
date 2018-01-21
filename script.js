@@ -19,26 +19,13 @@ jQuery.ajax({
     });
     paths.shift();
 
-    $(document).ready(function() {
-      var rand = getRand(0, paths.length);
-      $('html').css('background-image', 'url(' + paths[rand] + ')');
-      $('html').css('background-position', 'center');
-      $('html').css('background-size', 'center');
-      $('html').css('background-repeat', 'no-repeat');
-      $('html').css('background-attachment', 'fixed');
-    });
+    var rand = getRand(0, paths.length);
+    $('html').css('background-image', 'url(' + paths[rand] + ')');
+    $('html').css('background-position', 'center');
+    $('html').css('background-size', 'center');
+    $('html').css('background-repeat', 'no-repeat');
+    $('html').css('background-attachment', 'fixed');
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
   });
-
-
-// $.ajax({
-//   url: "/assets/backgrounds/",
-//   async: false,
-//   success: function(data) {
-//     $(data).find("a:contains(.jpg)").each(function() {
-//       bgImages.push($(this).attr("href"));
-//     });
-//   }
-// });
