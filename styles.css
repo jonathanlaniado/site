@@ -1,9 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
   background: url(assets/backgrounds/1901x1333-norway.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100%;
 }
 
 body {
