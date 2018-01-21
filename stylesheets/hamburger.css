@@ -1,7 +1,4 @@
-.hamburger * {
-  z-index: 0;
-  position: relative;
-}
+.hamburger * {}
 
 .hamburger {
   padding-top: 25px;
