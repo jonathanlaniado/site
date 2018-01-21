@@ -35,11 +35,9 @@ $(document).ready(function() {
     $('.hamburger').toggleClass('is-active');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
-      // $('.logo-container').css('display', 'flex');
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
-      // $('.logo-container').css('display', 'none');
     }
   });
   $('.logo').click(function() {
@@ -49,3 +47,9 @@ $(document).ready(function() {
     }, 400);
   });
 });
+
+$(document).ready(function() {
+    if ($(window).width() && ($('.hb-menu').hasClass('menu-selected'))) < 814) {
+    $('.hb-menu').toggleClass('slide-out-top');
+  }
+}
