@@ -1,4 +1,7 @@
-var bgImages = [];
+// calculates a random number between the specifi≥ed values
+function getRand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 // adds all image locations from the assets/backgrounds/ directory to an array
 jQuery.ajax({
@@ -15,7 +18,15 @@ jQuery.ajax({
       paths.push(val);
     });
     paths.shift();
-    console.log(paths);
+
+    $(document).ready(function() {
+      var rand = getRand(0, bgImages.length);
+      $('html').css('background-image', 'url(' + paths[rand] + ')');
+      $('html').css('background-position', 'center');
+      $('html').css('background-size', 'center');
+      $('html').css('background-repeat', 'no-repeat');
+      $('html').css('background-attachment', 'fixed');
+    });
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
@@ -30,18 +41,4 @@ jQuery.ajax({
 //       bgImages.push($(this).attr("href"));
 //     });
 //   }
-// });
-//
-// // calculates a random number between the specifi≥ed values
-// function getRand(min, max) {
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-//
-// $(document).ready(function() {
-//   var rand = getRand(0, bgImages.length);
-//   $('html').css('background-image', 'url(' + bgImages[rand] + ')');
-//   $('html').css('background-position', 'center');
-//   $('html').css('background-size', 'center');
-//   $('html').css('background-repeat', 'no-repeat');
-//   $('html').css('background-attachment', 'fixed');
 // });
