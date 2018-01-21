@@ -68,5 +68,6 @@ nav {
 
 .logo {
   cursor: pointer;
-  width: 10px
+  max-width: 400px;
+width: 40%;
 }
