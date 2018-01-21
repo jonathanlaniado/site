@@ -35,6 +35,7 @@ $(document).ready(function() {
     $(this).toggleClass('is-active');
   });
   $('.logo').click(function() {
-    $(this).toggleClass('rotate-center');
+    $(this).addClass('rotate-center');
+    $(this).removeClass('rotate-center');
   });
 });
