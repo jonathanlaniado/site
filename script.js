@@ -9,7 +9,7 @@ jQuery.ajax({
     },
   })
   .done(function(data, textStatus, jqXHR) {
-    var paths = JSON.parse(data).path;
+    var paths = JSON.parse(data);
     console.log(paths);
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
