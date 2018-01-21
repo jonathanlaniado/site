@@ -62,8 +62,8 @@ nav {
 }
 
 .hamburger--vortex .hamburger-inner::before, .hamburger--vortex .hamburger-inner::after {
-  transition-duration: 0s;
   transition-delay: 0.1s;
+  transition-duration: 0s;
   transition-timing-function: linear;
 }
 
