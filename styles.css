@@ -46,7 +46,7 @@ nav {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: calc(100vh - 250px);
+  height: calc(100vh - 200px);
   justify-content: center;
   width: 100%;
 }
@@ -54,6 +54,6 @@ nav {
 .logo {
   margin: auto;
   max-width: 400px;
-  min-width: 400px !important;
+  min-width: 400px;
   width: 40%;
 }
