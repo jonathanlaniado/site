@@ -28,3 +28,12 @@ jQuery.ajax({
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
   });
+
+$(document).ready(function() {
+
+  $(document).on('click', function(event) {
+    $target = $(event.target);
+    $target.addClass('is-active');
+  });
+
+})
