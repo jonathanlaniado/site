@@ -32,3 +32,11 @@ jQuery.ajax({
 document.getElementById('hb').onclick = function() {
   document.getElementById('hb').classList.add('is-active');
 }
+
+document.getElementById('hb-box').onclick = function() {
+  document.getElementById('hb').classList.add('is-active');
+}
+
+document.getElementById('hb-inner').onclick = function() {
+  document.getElementById('hb').classList.add('is-active');
+}
