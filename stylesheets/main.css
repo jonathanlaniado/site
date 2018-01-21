@@ -1,4 +1,4 @@
-@media screen and (max-device-width: 1200px) {
+@media screen and (min-device-width: 1200px) {
   .nav-item {
     display: none !important;
   }
