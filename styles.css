@@ -5,11 +5,11 @@
 html {
   background: url(assets/backgrounds/3840x2160-seasons-grayscale.jpg) no-repeat center center fixed;
   box-sizing: border-box;
+  height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100%;
 }
 
 body {
