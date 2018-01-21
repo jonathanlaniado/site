@@ -13,7 +13,7 @@ jQuery.ajax({
     //iterate through object keys
     Object.keys(data).forEach(function(key) {
       //get the value of name
-      var val = example[key]["path"];
+      var val = data[key]["path"];
       //push the name string in the array
       arrNames.push(val);
     });
