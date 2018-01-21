@@ -32,10 +32,10 @@ jQuery.ajax({
 
 $(document).ready(function() {
   $('.hamburger').click(function() {
-    $(this).toggleClass('is-active');
+    $('.hamburger').toggleClass('is-active');
   });
   $('.logo').click(function() {
-    $(this).addClass('rotate-center');
+    $('.logo').addClass('rotate-center');
     setTimeout(function() {
       $('.logo').removeClass('rotate-center');
     }, 500);
