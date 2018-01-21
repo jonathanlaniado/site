@@ -30,5 +30,5 @@ jQuery.ajax({
   });
 
 document.getElementById('hb').onclick = function() {
-
+  document.getElementById('hb').classList.add('is-active');
 }
