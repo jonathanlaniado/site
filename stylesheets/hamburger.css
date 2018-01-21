@@ -117,6 +117,7 @@
   flex-direction: column wrap;
   justify-content: center;
   align-items: center;
+  width: 50px;
 }
 
 .burger-item {
