@@ -1,3 +1,8 @@
+.hamburger * {
+  z-index: 1;
+  position: relative;
+}
+
 .hamburger {
   padding-top: 25px;
   display: inline-block;
