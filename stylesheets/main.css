@@ -63,6 +63,8 @@ nav {
   height: 80vh;
   justify-content: center;
   width: 100%;
+  position: relative;
+  z-index: auto;
 }
 
 .logo {
@@ -70,5 +72,4 @@ nav {
   max-width: 400px;
   min-width: 300px;
   width: 40%;
-  position: relative;
 }
