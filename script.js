@@ -49,7 +49,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    if (($(window).width()) && ($('.hb-menu').hasClass('menu-selected'))) < 814) {
-    $('.hb-menu').toggleClass('slide-out-top');
-  }
-}
+      if (($(window).width() < 814) && ($('.hb-menu').hasClass('menu-selected'))) {
+        $('.hb-menu').toggleClass('slide-out-top');
+      }
+    }
