@@ -35,7 +35,7 @@ $(document).ready(function() {
   $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
     $('.hb-menu').css('display', 'block');
-    $('.hb-menu').css('z-index', '9');
+    $('.hb-menu').css('z-index', '8');
     $('.hb-menu').toggleClass('slide-in-top');
   });
   $('.logo').click(function() {
