@@ -9,8 +9,8 @@ jQuery.ajax({
     },
   })
   .done(function(data, textStatus, jqXHR) {
-    console.log("HTTP Request Succeeded: " + jqXHR.status);
-    console.log(data);
+    bgImages.push(data);
+    console.log(bgImages);
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
