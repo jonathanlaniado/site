@@ -15,9 +15,7 @@ jQuery.ajax({
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
   })
-  .always(function() {
-    bgImages.push(data);
-  });
+  .always(function() {});
 
 
 // $.ajax({
