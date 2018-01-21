@@ -9,8 +9,8 @@ jQuery.ajax({
     },
   })
   .done(function(data, textStatus, jqXHR) {
-    var paths = data;
-    console.log(paths[0]);
+    var paths = JSON.stringify(JSON.parse(data[0]).path);
+    console.log(paths);
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
