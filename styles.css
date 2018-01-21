@@ -1,9 +1,10 @@
-* {
-  box-sizing: border-box;
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 html {
   background: url(assets/backgrounds/1901x1333-norway.jpg) no-repeat center center fixed;
+  box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
