@@ -29,14 +29,17 @@ jQuery.ajax({
     console.log("HTTP Request Failed");
   });
 
-document.getElementById('hb').onclick = function() {
-  document.getElementById('hb').classList.add('is-active');
-}
+$('#hb').click(function() {
+  $('hb').removeClass('is-active');
+  $(this).addClass('is-active');
+});
 
-document.getElementById('hb-box').onclick = function() {
-  document.getElementById('hb').classList.add('is-active');
-}
+$('#hb-box').click(function() {
+  $('hb').removeClass('is-active');
+  $(this).addClass('is-active');
+});
 
-document.getElementById('hb-inner').onclick = function() {
-  document.getElementById('hb').classList.add('is-active');
-}
+$('#hb-inner').click(function() {
+  $('hb').removeClass('is-active');
+  $(this).addClass('is-active');
+});
