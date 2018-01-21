@@ -69,9 +69,8 @@ nav {
   align-items: center;
   position: relative;
   z-index: auto;
-  height: 80vh;
   width: 40%;
-  /* margin: 0 auto; */  overflow: hidden;
+  margin: 0 auto;
 }
 
 .logo {
