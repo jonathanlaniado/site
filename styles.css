@@ -27,7 +27,7 @@ nav {
   align-items: center;
 }
 
-nav a {
+.nav-item {
   margin: auto 10px auto 10px;
   text-decoration: none;
   text-transform: uppercase;
