@@ -5,30 +5,30 @@ jQuery.ajax({
     url: "https://api.github.com/repos/jonathanlaniado/site/contents/assets/backgrounds",
     type: "GET",
     headers: {
-        "Authorization": "Basic am9uYXRoYW5sYW5pYWRvOlpaN21KOTJvZGxEZjBOQw==",
+      "Authorization": "Basic am9uYXRoYW5sYW5pYWRvOlpaN21KOTJvZGxEZjBOQw==",
     },
-})
-.done(function(data, textStatus, jqXHR) {
+  })
+  .done(function(data, textStatus, jqXHR) {
     console.log("HTTP Request Succeeded: " + jqXHR.status);
     console.log(data);
-})
-.fail(function(jqXHR, textStatus, errorThrown) {
+  })
+  .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
-})
-.always(function() {
-    /* ... */
-});
+  })
+  .always(function() {
+    bgImages.push(data);
+  });
 
-// //
-// // $.ajax({
-// //   url: "/assets/backgrounds/",
-// //   async: false,
-// //   success: function(data) {
-// //     $(data).find("a:contains(.jpg)").each(function() {
-// //       bgImages.push($(this).attr("href"));
-// //     });
-// //   }
-// // });
+
+// $.ajax({
+//   url: "/assets/backgrounds/",
+//   async: false,
+//   success: function(data) {
+//     $(data).find("a:contains(.jpg)").each(function() {
+//       bgImages.push($(this).attr("href"));
+//     });
+//   }
+// });
 //
 // // calculates a random number between the specifi≥ed values
 // function getRand(min, max) {
