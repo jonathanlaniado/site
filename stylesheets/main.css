@@ -12,7 +12,7 @@
     display: none;
   }
   .logo {
-    width: 75%;
+    width: 75% !important;
   }
 }
 
