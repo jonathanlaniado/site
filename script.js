@@ -38,6 +38,6 @@ $(document).ready(function() {
     $('.logo').addClass('rotate-center');
     setTimeout(function() {
       $('.logo').removeClass('rotate-center');
-    }, 500);
+    }, 400);
   });
 });
