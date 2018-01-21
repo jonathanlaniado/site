@@ -34,7 +34,7 @@ $(document).ready(function() {
   $('.hamburger').click(function() {
     $(this).toggleClass('is-active');
   });
-  $('.hamburger').click(function() {
-    $(this).toggleClass('is-active');
+  $('.logo').click(function() {
+    $(this).toggleClass('rotate-center');
   });
 });
