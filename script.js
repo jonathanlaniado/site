@@ -33,11 +33,11 @@ jQuery.ajax({
 // animates several elements on the page
 $(document).ready(function() {
   $('.hamburger').click(function() {
-    $('.hamburger').toggleClass('is-active');
-    if $('.hb-menu').hasClass('menu-selected') {
-      $('.hb-menu').toggleClass('slide-out-top');
-    }
-    // else {
+    // $('.hamburger').toggleClass('is-active');
+// if $('.hb-menu').hasClass('menu-selected') {
+//   $('.hb-menu').toggleClass('slide-out-top');
+// }
+// else {
 //   $('.hb-menu').toggleClass('menu-selected');
 //   $('.hb-menu').toggleClass('slide-in-top');
 // }
