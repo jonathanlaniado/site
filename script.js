@@ -33,13 +33,3 @@ $('#hb').click(function() {
   $('hb').removeClass('is-active');
   $(this).addClass('is-active');
 });
-
-$('#hb-box').click(function() {
-  $('hb').removeClass('is-active');
-  $(this).addClass('is-active');
-});
-
-$('#hb-inner').click(function() {
-  $('hb').removeClass('is-active');
-  $(this).addClass('is-active');
-});
