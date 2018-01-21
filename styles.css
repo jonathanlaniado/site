@@ -46,7 +46,7 @@ nav {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: calc(100vh - 250px);
+  height: calc(100vh - 200px);
   justify-content: center;
   width: 100%;
 }
