@@ -10,7 +10,7 @@ jQuery.ajax({
   })
   .done(function(data, textStatus, jqXHR) {
     var paths = data;
-    console.log(paths);
+    console.log(paths[0]);
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
     console.log("HTTP Request Failed");
