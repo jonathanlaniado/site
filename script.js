@@ -49,7 +49,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    if ($(window).width() && ($('.hb-menu').hasClass('menu-selected'))) < 814) {
+    if (($(window).width()) && ($('.hb-menu').hasClass('menu-selected'))) < 814) {
     $('.hb-menu').toggleClass('slide-out-top');
   }
 }
