@@ -3,10 +3,13 @@
 }
 
 html {
-  background: url(assets/backgrounds/3840x2160-seasons-grayscale.jpg) no-repeat center center fixed;
+  /* background: url(assets/backgrounds/3840x2160-seasons-grayscale.jpg) no-repeat center center fixed; */
   background-size: cover;
   box-sizing: border-box;
   height: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
 }
 
 body {
@@ -35,9 +38,21 @@ nav {
   text-transform: uppercase;
 }
 
+.nav-item:hover {
+  color: #EEEEEE;
+}
+
+.logo-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(100vh - 250px);
+  justify-content: center;
+  width: 100%;
+}
+
 .logo {
-  left: 50%;
-  position: fixed;
-  top: 50%;
+  margin: auto;
+  max-width: 400px;
   width: 40%;
 }
