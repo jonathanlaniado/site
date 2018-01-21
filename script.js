@@ -52,5 +52,6 @@ $(window).resize(function() {
   if (($(window).width() > 813) && ($('.hb-menu').hasClass('menu-selected'))) {
     $('.hb-menu').toggleClass('slide-out-top');
     $('.hb-menu').toggleClass('menu-selected');
+    $('.hamburger').toggleClass('is-active');
   }
 });
