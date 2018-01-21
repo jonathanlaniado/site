@@ -21,6 +21,8 @@ body {
 }
 
 nav * {
+  display: flex;
+  flex-flow: row nowrap;
   text-decoration: none;
   text-transform: uppercase;
 }
