@@ -30,9 +30,11 @@ jQuery.ajax({
     console.log("HTTP Request Failed");
   });
 
+// animates several elements on the page
 $(document).ready(function() {
   $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
+    $('.hb-menu').toggleClass('slide-in-top');
   });
   $('.logo').click(function() {
     $('.logo').addClass('rotate-center');
