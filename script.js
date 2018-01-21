@@ -14,6 +14,7 @@ jQuery.ajax({
       var val = data[key]["path"];
       paths.push(val);
     });
+    paths.shift();
     console.log(paths);
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
