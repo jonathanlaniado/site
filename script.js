@@ -11,7 +11,7 @@ jQuery.ajax({
   .done(function(data, textStatus, jqXHR) {
     var arrNames = [];
     //iterate through object keys
-    Object.keys(example).forEach(function(key) {
+    Object.keys(data).forEach(function(key) {
       //get the value of name
       var val = example[key]["path"];
       //push the name string in the array
