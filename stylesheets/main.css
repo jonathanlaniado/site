@@ -72,4 +72,5 @@ nav {
 .logo {
   cursor: pointer;
   width: 40%;
+  max-height: 40vh
 }
