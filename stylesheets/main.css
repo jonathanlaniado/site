@@ -69,6 +69,7 @@ nav {
   align-items: center;
   position: relative;
   z-index: auto;
+  height: calc(80vh - 33px);
   width: 40%;
   margin: 0 auto;
 }
