@@ -11,13 +11,13 @@
   .nav-item {
     display: none;
   }
-  .logo-container {
+  /* .logo-container {
     width: 80% !important;
   }
   .logo {
     width: 75% !important;
     max-height: 100% !important;
-  }
+  } */
 }
 
 *, *:before, *:after {
