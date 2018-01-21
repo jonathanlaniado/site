@@ -3,7 +3,7 @@
 header('Content-Type: text/javascript; charset=UTF-8');
 
 # Path to image folder
-$imageFolder = 'assets/backgrounds/';
+$imageFolder = 'img/';
 
 # Show only these file types from the image folder
 $imageTypes = '{*.jpg,*.JPG,*.jpeg,*.JPEG,*.png,*.PNG,*.gif,*.GIF}';
