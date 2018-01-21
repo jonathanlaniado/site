@@ -22,7 +22,7 @@ body {
 
 nav * {
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: row;
   text-decoration: none;
   text-transform: uppercase;
 }
