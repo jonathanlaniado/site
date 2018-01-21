@@ -29,6 +29,7 @@ nav {
 
 .nav-item {
   margin: 20px 20px auto 20px;
+  color: white;
   text-decoration: none;
   text-transform: uppercase;
 }
