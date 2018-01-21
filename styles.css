@@ -20,8 +20,7 @@ body {
   letter-spacing: 0.3px;
 }
 
-nav * {
-  /* display: flex; */  flex-direction: column;
+nav a {
   text-decoration: none;
   text-transform: uppercase;
 }
