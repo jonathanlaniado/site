@@ -1,4 +1,3 @@
-# To prevent browser error output
 header('Content-Type: text/javascript; charset=UTF-8');
 
 # Path to image folder
