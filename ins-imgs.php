@@ -1,4 +1,4 @@
-<?php
+?php
 # To prevent browser error output
 header('Content-Type: text/javascript; charset=UTF-8');
 
