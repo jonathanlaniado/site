@@ -108,3 +108,8 @@
   top: 0;
   left: 0;
 }
+
+.menu-selected {
+  display: block !important;
+  z-index: -1;
+}
