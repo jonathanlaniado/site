@@ -12,7 +12,8 @@
     display: none;
   }
   .logo {
-    height: 100% !important;
+    width: 75% !important;
+    max-height: 100% !important;
   }
 }
 
