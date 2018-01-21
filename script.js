@@ -34,6 +34,7 @@ jQuery.ajax({
 $(document).ready(function() {
   $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
+    $('.hb-menu').css('display', 'block');
     $('.hb-menu').toggleClass('slide-in-top');
   });
   $('.logo').click(function() {
