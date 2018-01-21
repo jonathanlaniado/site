@@ -37,9 +37,7 @@ nav {
   text-transform: uppercase;
 }
 
-.nav-item:hover {
-  color: #EEEEEE;
-}
+.nav-item:hover {}
 
 .logo-container {
   align-items: center;
