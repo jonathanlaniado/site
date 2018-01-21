@@ -11,6 +11,9 @@
   .nav-item {
     display: none;
   }
+  .logo-container {
+    width: 100% !important;
+  }
   .logo {
     width: 75% !important;
     max-height: 100% !important;
