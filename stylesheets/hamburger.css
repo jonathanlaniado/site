@@ -94,6 +94,7 @@
 }
 
 .hb-menu {
+  display: none;
   background-color: #3e3e3e;
   position: absolute;
   width: 100%;
