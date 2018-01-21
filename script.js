@@ -3,7 +3,7 @@ function getRand(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// adds all image locations from the assets/backgrounds/ directory to an array
+// sets a random picture from assets/backgrounds as the homepage background
 jQuery.ajax({
     url: "https://api.github.com/repos/jonathanlaniado/site/contents/assets/backgrounds",
     type: "GET",
