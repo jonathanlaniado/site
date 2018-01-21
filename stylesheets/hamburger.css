@@ -110,5 +110,5 @@
 
 .menu-selected {
   display: block !important;
-  z-index: 0;
+  z-index: -1;
 }
