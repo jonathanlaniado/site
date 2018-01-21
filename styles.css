@@ -21,6 +21,6 @@ body {
 }
 
 nav {
-  text-decoration: none !important;
+  text-decoration: line-through !important;
   text-transform: uppercase;
 }
