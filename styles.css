@@ -54,6 +54,6 @@ nav {
 .logo {
   margin: auto;
   max-width: 400px;
-  min-width: 400px;
+  min-width: 400px !important;
   width: 40%;
 }
