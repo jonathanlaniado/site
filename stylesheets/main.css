@@ -28,12 +28,11 @@ nav {
 }
 
 .nav-item {
-  color: white;
+  color: rgb(255, 255, 255, 0.75);
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 4px;
   margin: 25px 3% 25px 3%;
-  opacity: 5%;
   text-decoration: none;
   text-transform: uppercase;
 }
