@@ -2,7 +2,7 @@ var bgImages = [];
 
 // adds all image locations from the assets/backgrounds/ directory to an array
 $.ajax({
-  url: "http:www.jonathanlaniado.com/assets/backgrounds/",
+  url: "/assets/backgrounds/",
   async: false,
   success: function(data) {
     $(data).find("a:contains(.jpg)").each(function() {
