@@ -1,6 +1,6 @@
 @media screen and (max-width: 820px) {
   .nav-item {
-    visibility: hidden !important;
+    display: none;
   }
 }
 
