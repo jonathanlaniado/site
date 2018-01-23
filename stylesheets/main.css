@@ -96,10 +96,6 @@ nav {
   margin-right: 50px;
 }
 
-.resume-item-details {
-  border-left: solid 1px gray;
-}
-
 .resume-item-city-date {
   display: flex;
   flex-flow: row wrap;
