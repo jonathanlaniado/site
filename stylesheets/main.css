@@ -76,7 +76,7 @@ nav {
 
 .resume-item {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   border: dashed red 1px;
 }
 
