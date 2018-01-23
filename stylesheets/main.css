@@ -78,7 +78,7 @@ nav {
   flex-direction: row;
 }
 
-.company-logo {
+.resume-item-logo {
   align-self: center;
   width: 200px;
   margin-right: 7vw;
@@ -88,4 +88,8 @@ nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
+
+.resume-item-description {
+  line-height: 3;
 }
