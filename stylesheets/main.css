@@ -47,27 +47,18 @@ nav {
   margin-bottom: 40px;
 }
 
-.nav-item-container {
-  margin: auto 3%;
-}
-
 .nav-item {
   color: black;
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 4px;
+  margin: auto 3%;
   text-decoration: none;
   text-transform: uppercase;
 }
 
-.period {
-  visibility: hidden;
-  letter-spacing: 4px;
-  vertical-align: 1.75px;
-}
-
-.period-mouseover {
-  visibility: visible;
+.nav-item:hover, .burger-item:hover {
+  opacity: 0.7;
 }
 
 .logo-container {
@@ -111,7 +102,7 @@ nav {
   justify-content: space-between;
   margin-bottom: 20px;
   text-transform: uppercase;
-  fo<div>.</div>t-size: 13px;
+  font-size: 13px;
   font-weight: 100 !important;
 }
 
