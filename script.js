@@ -2,13 +2,12 @@
 $(document).ready(function() {
   $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
+    $('.hamburger-inner').toggleClass('white');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
-      $('.hamburger-inner').removeClass('white');
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
-      $('.hamburger-inner').addClass('white');
     }
   });
   $('.logo').click(function() {
