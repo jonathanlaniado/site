@@ -5,6 +5,9 @@
 }
 
 @media (max-width: 813px) {
+  nav {
+    justify-content: flex-end !important;
+  }
   .nav-item {
     display: none;
   }
