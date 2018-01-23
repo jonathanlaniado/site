@@ -3,6 +3,7 @@ $(document).ready(function() {
   $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
     if ($('.hb-menu').hasClass('menu-selected')) {
+      $('.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after').css('background-color', 'white');
       $('.hb-menu').toggleClass('slide-out-top');
     } else {
       $('.hb-menu').toggleClass('menu-selected');
