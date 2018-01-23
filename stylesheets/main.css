@@ -30,7 +30,6 @@ body {
 }
 
 h2 {
-  margin: 25px auto;
   font-weight: 200;
   letter-spacing: 2px;
 }
@@ -97,6 +96,10 @@ nav {
   align-self: center;
   width: 150px;
   margin-right: 50px;
+}
+
+.resume-item-title {
+  margin: 25px auto;
 }
 
 .resume-item-city-date {
