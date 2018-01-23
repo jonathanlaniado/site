@@ -81,6 +81,7 @@ nav {
 }
 
 .company-logo {
-  width: 200px;
   align-self: center;
+  width: 200px;
+  margin-right: 7vw;
 }
