@@ -44,6 +44,7 @@ nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 .nav-item {
