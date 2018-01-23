@@ -1,6 +1,6 @@
 // animates the navigation bar on hover
 $('.nav-item-container').hover(function() {
-  $(this).css('visibility', 'hidden');
+  $(this).css('height', '0px');
 });
 
 // animates the hamburger menu popup
