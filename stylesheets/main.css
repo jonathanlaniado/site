@@ -93,6 +93,7 @@ nav {
 .resume-item-logo {
   align-self: center;
   width: 150px;
+  margin-right: 50px;
 }
 
 .resume-item-city-date {
