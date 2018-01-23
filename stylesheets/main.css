@@ -68,7 +68,7 @@ nav {
   flex-wrap: wrap;
   height: calc(80vh - 33px);
   justify-content: center;
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
   position: relative;
   z-index: auto;
