@@ -54,7 +54,7 @@ nav {
   text-transform: uppercase;
 }
 
-.nav-item:hover {
+.nav-item:hover, .burger-item:hover {
   opacity: 0.75;
 }
 
