@@ -79,11 +79,13 @@ nav {
 .resume-container {
   display: flex;
   flex-direction: column;
+  border: solid red 1px;
 }
 
 .resume-item {
   display: flex;
   flex-direction: row;
+  border: solid blue 1px;
 }
 
 .company-logo {
