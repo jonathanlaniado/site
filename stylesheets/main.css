@@ -93,7 +93,7 @@ nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .resume-item-description>li {
