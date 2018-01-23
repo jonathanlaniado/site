@@ -64,8 +64,11 @@ nav {
   justify-content: center;
   margin: 0 auto;
   width: 250px;
+  height: calc(80vh - 33px);
 }
 
 .logo {
   cursor: pointer;
+  max-width: 100%;
+  max-height: 60vh;
 }
