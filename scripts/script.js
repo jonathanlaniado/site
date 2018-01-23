@@ -1,5 +1,5 @@
 // animates the navigation bar on hover
-$(document).ready(function() {
+$('.nav-item-container').hover(function() {
 
 });
 
