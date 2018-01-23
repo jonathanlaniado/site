@@ -112,11 +112,11 @@
 }
 
 .burger-item-container {
-  height: inherit;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: center;
+  height: inherit;
 }
 
 .burger-item {
