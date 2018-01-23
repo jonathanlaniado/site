@@ -1,10 +1,3 @@
-// animates the navigation bar on hover
-$(document).ready(function() {
-  $('.nav-item-container').hover(function() {
-    $('.period', this).toggleClass('period-mouseover');
-  });
-});
-
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
