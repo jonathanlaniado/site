@@ -64,6 +64,10 @@ nav {
   visibility: hidden;
 }
 
+.period-mouseover {
+  visibility: visible !important;
+}
+
 .logo-container {
   position: relative;
   z-index: auto;
