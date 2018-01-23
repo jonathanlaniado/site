@@ -90,6 +90,6 @@ nav {
   justify-content: space-between;
 }
 
-.resume-item-description>li {
+.resume-item-description {
   margin-bottom: 30px;
 }
