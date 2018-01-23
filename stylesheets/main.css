@@ -29,6 +29,10 @@ body {
   width: 80%;
 }
 
+h2 {
+  text-transform: uppercase;
+}
+
 h4 {
   margin: 0;
 }
