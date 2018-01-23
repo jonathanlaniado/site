@@ -6,7 +6,8 @@ $(document).ready(function() {
 });
 
 // animates the hamburger menu popup
-$(document).ready(function() {  $('.hamburger').click(function() {
+$(document).ready(function() {
+  $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     if ($('.hb-menu').hasClass('menu-selected')) {
