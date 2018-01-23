@@ -100,14 +100,14 @@ nav {
 }
 
 .resume-item-title {
-  margin: 10px auto;
+  margin: 15px auto;
 }
 
 .resume-item-city-date {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .resume-item-description>li {
