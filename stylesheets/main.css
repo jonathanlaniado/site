@@ -17,6 +17,9 @@
   .resume-item {
     flex-wrap: wrap;
   }
+  .resume-item-city-date {
+    flex-direction: column;
+  }
 }
 
 *, *:before, *:after {
