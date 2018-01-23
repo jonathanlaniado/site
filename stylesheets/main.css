@@ -94,7 +94,10 @@ nav {
   align-self: center;
   width: 150px;
   margin-right: 50px;
-  border-right: solid 1px gray;
+}
+
+.resume-item-details {
+  border-left: solid 1px gray;
 }
 
 .resume-item-city-date {
