@@ -63,7 +63,7 @@ nav {
 .period {
   visibility: hidden;
   letter-spacing: 4px;
-  vertical-align: 1px
+  vertical-align: 2px;
 }
 
 .period-mouseover {
