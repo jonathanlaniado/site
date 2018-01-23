@@ -29,6 +29,10 @@ body {
   width: 80%;
 }
 
+h4 {
+  margin: 0;
+}
+
 nav {
   align-items: center;
   display: flex;
