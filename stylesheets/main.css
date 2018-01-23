@@ -77,10 +77,10 @@ nav {
 .resume-item {
   display: flex;
   flex-direction: row;
-  align-self: center;
   border: dashed red 1px;
 }
 
 .company-logo {
   width: 200px;
+  align-self: center;
 }
