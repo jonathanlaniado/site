@@ -89,6 +89,6 @@ nav {
 .company-logo {
   object-fit: contain;
   max-width: 200px;
-  width: auto;
+  width: 200px;
   height: auto;
 }
