@@ -60,12 +60,10 @@ nav {
   text-transform: uppercase;
 }
 
-.period {
-  visibility: hidden;
-}
+.period {}
 
 .period-mouseover {
-  visibility: visible !important;
+  color: red;
 }
 
 .logo-container {
