@@ -12,10 +12,9 @@
     display: none;
   }
   .logo-container {
-    width: 80% !important;
+    width: 60% !important;
   }
   .logo {
-    max-width: 75% !important;
     max-height: auto !important;
   }
 }
