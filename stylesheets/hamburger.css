@@ -43,6 +43,10 @@
   transition-timing-function: ease;
 }
 
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  background-color: white;
+}
+
 .hamburger-inner::before, .hamburger-inner::after {
   content: "";
   display: block;
