@@ -85,3 +85,8 @@ nav {
   width: 200px;
   margin-right: 7vw;
 }
+
+.resume-item-city-date {
+  display: flex;
+  justify-content: space-between;
+}
