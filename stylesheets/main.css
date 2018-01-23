@@ -65,7 +65,7 @@ nav {
 
 .nav-item:hover+.period {
   /* opacity: 0.7; */
-  visibility: visible;
+  visibility: visible !important;
 }
 
 .logo-container {
