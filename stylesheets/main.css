@@ -71,13 +71,11 @@ nav {
 .resume-container {
   display: flex;
   flex-direction: column;
-  border: solid lightgray 4px;
 }
 
 .resume-item {
   display: flex;
   flex-direction: row;
-  border: dashed red 1px;
 }
 
 .company-logo {
@@ -90,5 +88,4 @@ nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  color: gray;
 }
