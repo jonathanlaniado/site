@@ -69,7 +69,7 @@ nav {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  min-width: 200px;
+  min-width: 250px;
   width: 30%;
   height: calc(80vh - 33px);
 }
