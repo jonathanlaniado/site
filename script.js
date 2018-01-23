@@ -4,10 +4,10 @@ $(document).ready(function() {
     $('.hamburger').toggleClass('is-active');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
-      $('.hamburger-inner').toggleClass('white');
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
+      $('.hamburger-inner').toggleClass('white');
     }
   });
   $('.logo').click(function() {
