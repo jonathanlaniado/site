@@ -26,3 +26,12 @@ $(window).resize(function() {
     $('.hamburger-inner').removeClass('white');
   }
 });
+
+$(document).ready(function() {
+  $('.logo').click(function() {
+    $('.logo').addClass('rotate-center');
+    setTimeout(function() {
+      $('.logo').removeClass('rotate-center');
+    }, 400);
+  });
+});
