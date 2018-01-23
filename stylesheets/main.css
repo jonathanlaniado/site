@@ -85,3 +85,7 @@ nav {
   display: flex;
   flex-direction: row;
 }
+
+.company-logo {
+  width: 200px;
+}
