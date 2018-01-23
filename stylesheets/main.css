@@ -98,7 +98,7 @@ nav {
 
 .resume-item-details {
   border-left: solid 1px gray;
-  border-spacing: 100px;
+  border-spacing: -1000px;
 }
 
 .resume-item-city-date {
