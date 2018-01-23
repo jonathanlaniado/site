@@ -65,6 +65,7 @@ nav {
 }
 
 .period-mouseover {
+  color: red;
   visibility: visible;
 }
 
