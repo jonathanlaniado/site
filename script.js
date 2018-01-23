@@ -17,6 +17,7 @@ $(document).ready(function() {
   });
 });
 
+// closes the hamburger menu if the window is resized
 $(window).resize(function() {
   if (($(window).width() > 813) && ($('.hb-menu').hasClass('menu-selected'))) {
     $('.hb-menu').addClass('slide-out-top');
