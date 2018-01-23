@@ -117,8 +117,6 @@
   flex-flow: column nowrap;
   justify-content: space-around;
   align-items: center;
-  margin-top: 33px;
-  margin-bottom: -100px;
 }
 
 .burger-item {
