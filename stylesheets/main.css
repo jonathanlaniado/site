@@ -11,6 +11,9 @@
   .nav-item {
     display: none;
   }
+  .logo-container {
+    max-width: 50%;
+  }
 }
 
 *, *:before, *:after {
