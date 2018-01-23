@@ -1,7 +1,7 @@
 // animates the navigation bar on hover
 $(document).ready(function() {
   $('.nav-item-container').hover(function() {
-    $(this).toggleClass('period-mouseover');
+    $('.period', this).toggleClass('period-mouseover');
   });
 });
 
