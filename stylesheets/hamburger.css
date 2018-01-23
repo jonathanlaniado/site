@@ -43,7 +43,7 @@
   transition-timing-function: ease;
 }
 
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+.hamburger-inner.white, .hamburger-inner.white::before, .hamburger-inner.white::after {
   background-color: white;
 }
 
