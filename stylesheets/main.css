@@ -63,7 +63,7 @@ nav {
 
 /* .nav-item:hover, .burger-item:hover { */
 
-.nav-item:hover+.period {
+.nav-item:hover + .period {
   /* opacity: 0.7; */
   color: red;
 }
