@@ -87,6 +87,9 @@ nav {
 }
 
 .company-logo {
-  width: 200px;
+  display: block;
+  max-width: 230px;
+  max-height: 95px;
+  width: auto;
   height: auto;
 }
