@@ -85,7 +85,7 @@ nav {
 .resume-item {
   display: flex;
   flex-direction: row;
-  border: dotted red 1px;
+  border: dashed red 1px;
 }
 
 .company-logo {
