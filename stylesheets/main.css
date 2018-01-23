@@ -64,13 +64,6 @@ nav {
   visibility: hidden;
 }
 
-/* .nav-item:hover, .burger-item:hover { */
-
-.nav-item:hover+.period {
-  /* opacity: 0.7; */
-  visibility: visible;
-}
-
 .logo-container {
   position: relative;
   z-index: auto;
