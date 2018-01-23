@@ -93,6 +93,7 @@ nav {
 .resume-item-logo {
   align-self: center;
   width: 10vw;
+  min-width: 100px;
   max-width: 200px;
   margin-right: 7vw;
 }
