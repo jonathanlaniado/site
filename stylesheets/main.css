@@ -76,6 +76,7 @@ nav {
 .resume-item {
   display: flex;
   flex-direction: row;
+  margin: 20px auto;
 }
 
 .resume-item-logo {
