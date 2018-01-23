@@ -80,3 +80,9 @@ nav {
   display: flex;
   flex-direction: column;
 }
+
+.resume-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
