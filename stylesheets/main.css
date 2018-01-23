@@ -64,13 +64,13 @@ nav {
 .logo-container {
   position: relative;
   z-index: auto;
-  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  height: calc(80vh - 33px);
+  align-items: center;
   justify-content: center;
-  width: 30%;
   margin: 0 auto;
+  width: 30%;
+  height: calc(80vh - 33px);
 }
 
 .logo {
