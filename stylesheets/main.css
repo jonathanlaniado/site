@@ -62,6 +62,8 @@ nav {
 }
 
 .logo-container {
+  position: relative;
+  z-index: auto;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -69,8 +71,6 @@ nav {
   justify-content: center;
   width: 30%;
   margin: 0 auto;
-  position: relative;
-  z-index: auto;
 }
 
 .logo {
