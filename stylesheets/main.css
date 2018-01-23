@@ -75,6 +75,7 @@ nav {
 }
 
 .resume-item {
+  display: flex;
   border: dashed red 1px;
 }
 
