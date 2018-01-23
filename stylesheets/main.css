@@ -88,5 +88,6 @@ nav {
 
 .resume-item-city-date {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
