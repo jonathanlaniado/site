@@ -90,7 +90,7 @@ nav {
   margin: 20px auto;
 }
 
-.resume-item-logo:before {
+.resume-item-desctiption, .resume-item-logo:before {
   content: '';
   position: absolute;
   width: 8px;
