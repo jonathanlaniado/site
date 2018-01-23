@@ -23,5 +23,6 @@ $(window).resize(function() {
   if (($(window).width() > 813) && ($('.hb-menu').hasClass('menu-selected'))) {
     $('.hb-menu').addClass('slide-out-top');
     $('.hamburger').removeClass('is-active');
+    $('.hamburger-inner').removeClass('white');
   }
 });
