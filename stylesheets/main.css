@@ -48,11 +48,14 @@ nav {
 }
 
 .nav-item-container {
+  margin: auto 3%;
+}
+
+.nav-item {
   color: black;
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 4px;
-  margin: auto 3%;
   text-decoration: none;
   text-transform: uppercase;
 }
