@@ -93,9 +93,6 @@ nav {
 .resume-item-logo {
   align-self: center;
   width: 150px;
-  min-width: 100px;
-  max-width: 200px;
-  margin-right: 7vw;
 }
 
 .resume-item-city-date {
