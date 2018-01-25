@@ -94,6 +94,10 @@ nav {
   max-height: 60vh;
 }
 
+.logo-mini {
+  width: 100px;
+}
+
 .resume-container {
   display: flex;
   flex-direction: column;
