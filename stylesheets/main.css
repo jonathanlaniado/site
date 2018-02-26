@@ -36,15 +36,23 @@ body {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 700;
   margin: 100px auto 50px auto;
+  color: #0f0f0f;
 }
 
 h2 {
   margin: 0;
   font-weight: 200;
   letter-spacing: 2px;
+  color: #0f0f0f;
+}
+
+h3 {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 27px;
 }
 
 h4 {
@@ -52,6 +60,11 @@ h4 {
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+a {
+  color: #3b99fc;
+  text-decoration: none;
 }
 
 nav {
@@ -128,4 +141,28 @@ nav {
 
 .resume-item-description>li {
   margin-bottom: 15px;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.project-item {
+  width: calc(100% / 3.6);
+  min-width: 250px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.project-icon {
+  height: 52px;
+}
+
+.project-item-title-wrapper, .project-item-description-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
 }
