@@ -15,6 +15,10 @@ $(document).ready(function() {
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
+      $('html, body').on('touchmove', function(e) {
+        e.preventDefault();
+      });
+      console.log("Yes!")
     }
   });
 });
