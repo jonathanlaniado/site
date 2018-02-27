@@ -111,7 +111,7 @@
 
 .menu-revealed {
   display: block !important;
-  position: fixed;
+  position: absolute;
   z-index: 1;
 }
 
