@@ -1,3 +1,4 @@
+console.log("1");
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
