@@ -17,8 +17,7 @@ $(document).ready(function() {
     $('html, body').off('touchmove', function(e) {
       e.preventDefault();
     });
-    console.log("No!")
-
+    console.log("No!");
   } else {
     $('html, body').on('touchmove', function(e) {
       e.preventDefault();
