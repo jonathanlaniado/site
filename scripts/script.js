@@ -7,7 +7,7 @@ var hbMenuActive = false;
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
-    hbMenuActive.toggle(true);
+    hbMenuActive = !hbMenuActive;
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
