@@ -1,13 +1,14 @@
-$('html, body').on('touchmove', function(e) {
-  e.preventDefault();
-});
-
 var hbMenuActive = false;
 
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
     hbMenuActive = !hbMenuActive;
+    while (hbMenuActive) {
+      $('html, body').on('touchmove', function(e) {
+        e.preventDefault();
+      });
+    }
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
