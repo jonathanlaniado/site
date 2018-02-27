@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('.hamburger-inner').toggleClass('white');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
-      $('.hamburger').off('scroll mousewheel touchmove');
+      $('body').off('scroll mousewheel touchmove');
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
