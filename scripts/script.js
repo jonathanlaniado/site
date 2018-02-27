@@ -13,10 +13,14 @@ $(document).ready(function() {
   });
 });
 
+myapp = {
+  active: false
+};
 $('html, body').on('touchmove', function(e) {
-  e.preventDefault();
+  if (myapp.active) {
+    e.preventDefault();
+  }
 });
-
 // closes the hamburger menu if the window is resized
 $(window).resize(function() {
   if (($(window).width() > 813) && ($('.hb-menu').hasClass('menu-selected'))) {
