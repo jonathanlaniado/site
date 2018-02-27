@@ -17,7 +17,7 @@ $(document).ready(function() {
 });
 
 while (hbMenuActive) {
-  $('body').hasClass('yoyoyoyo');
+  $('body').toggle('yoyoyoyo');
   $('html, body').on('touchmove', function(e) {
     e.preventDefault();
   });
