@@ -1,5 +1,5 @@
 var hbMenuActive = false;
-
+print("yes");
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
