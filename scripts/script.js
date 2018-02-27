@@ -7,16 +7,16 @@ var hbMenuActive = false;
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
-    hbMenuActive = true;
-    console.log(hbMenuActive);
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
+      hbMenuActive = false;
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
+      hbMenuActive = true;
     }
   });
 });
