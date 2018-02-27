@@ -109,7 +109,7 @@
   left: 0;
 }
 
-.menu-selected {
+.menu-revealed {
   display: block !important;
   position: absolute;
   z-index: 1;
