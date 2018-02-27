@@ -3,24 +3,18 @@ $(document).ready(function() {
   $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
-    $('body').toggleClass('no-scroll');
-    if ($('.hb-menu').hasClass('menu-revealed')) {
+    if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
     } else {
-      $('.hb-menu').toggleClass('menu-revealed');
+      $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
-    }
-    if ($('.hb-menu').hasClass('slide-out-top')) {
-      $('html, body').off('touchmove', false);
-    } else {
-      $('html, body').on('touchmove', false);
     }
   });
 });
 
 // closes the hamburger menu if the window is resized
 $(window).resize(function() {
-  if (($(window).width() > 813) && ($('.hb-menu').hasClass('menu-revealed'))) {
+  if (($(window).width() > 813) && ($('.hb-menu').hasClass('menu-selected'))) {
     $('.hb-menu').addClass('slide-out-top');
     $('.hamburger').removeClass('is-active');
     $('.hamburger-inner').removeClass('white');
