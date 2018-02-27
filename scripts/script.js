@@ -8,14 +8,16 @@ $(document).ready(function() {
     $('body').toggleClass('no-scroll');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('menu-selected');
-      $('.hb-menu').toggleClass('slide-out-top');
+      $('.hb-menu').addClass('slide-out-top');
+      $('.hb-menu').removeClass('slide-in-top');
       $('html, body').off('touchmove', function(e) {
         e.preventDefault();
       });
       console.log("No!")
     } else {
       $('.hb-menu').toggleClass('menu-selected');
-      $('.hb-menu').toggleClass('slide-in-top');
+      $('.hb-menu').addClass('slide-in-top');
+      $('.hb-menu').removeClass('slide-out-top');
       $('html, body').on('touchmove', function(e) {
         e.preventDefault();
       });
