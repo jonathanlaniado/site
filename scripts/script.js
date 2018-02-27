@@ -5,6 +5,7 @@ $(document).ready(function() {
   $('.hamburger').click(function() {
     hbMenuActive = !hbMenuActive;
     while (hbMenuActive) {
+      $('body').hasClass('yoyoyoyo');
       $('html, body').on('touchmove', function(e) {
         e.preventDefault();
       });
