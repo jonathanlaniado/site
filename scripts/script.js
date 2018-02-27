@@ -2,7 +2,7 @@ $('html, body').on('touchmove', function(e) {
   e.preventDefault();
 });
 
-var hbMenuActive = false;
+var hbMenuActive;
 
 // animates the hamburger menu popup
 $(document).ready(function() {
