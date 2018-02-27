@@ -3,8 +3,8 @@ $(document).ready(function() {
   $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
-    $('body').off('scroll mousewheel touchmove');
-    $('.hamburger').off('scroll mousewheel touchmove');
+    $('body').off('scroll mousewheel touchmove', stopScrolling);
+    $('.hamburger').off('scroll mousewheel touchmove', stopScrolling);
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
     } else {
