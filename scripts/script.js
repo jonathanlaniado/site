@@ -6,14 +6,14 @@ $(document).ready(function() {
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
-    if ($('.hb-menu').hasClass('menu-selected')) {
+    if ($('.hb-menu').hasClass('menu-revealed')) {
       $('.hb-menu').addClass('slide-out-top');
       $('html, body').off('touchmove', function(e) {
         e.preventDefault();
       });
       console.log("No!")
     } else {
-      $('.hb-menu').toggleClass('menu-selected');
+      $('.hb-menu').toggleClass('menu-revealed');
       $('.hb-menu').addClass('slide-in-top');
       $('.hb-menu').removeClass('slide-out-top');
       $('html, body').on('touchmove', function(e) {
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 // closes the hamburger menu if the window is resized
 $(window).resize(function() {
-  if (($(window).width() > 813) && ($('.hb-menu').hasClass('menu-selected'))) {
+  if (($(window).width() > 813) && ($('.hb-menu').hasClass('menu-revealed'))) {
     $('.hb-menu').addClass('slide-out-top');
     $('.hamburger').removeClass('is-active');
     $('.hamburger-inner').removeClass('white');
