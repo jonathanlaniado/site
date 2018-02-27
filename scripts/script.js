@@ -10,7 +10,7 @@ $(document).ready(function() {
       });
     } else {
       console.log("No!")
-      $('html, body').on('touchmove', function(e) {
+      $('html, body').off('touchmove', function(e) {
         e.preventDefault();
       });
     }
