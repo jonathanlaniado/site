@@ -3,22 +3,15 @@ var hbMenuActive = false;
 $(document).ready(function() {
   $('.hamburger').click(function() {
     hbMenuActive = !hbMenuActive;
-    if (hbMenuActive) {
-      console.log("Yes!");
-      $('html, body').on('touchmove', function(e) {
-        e.preventDefault();
-      });
-    } else {
-      console.log("No!")
-      $('html, body').off('touchmove', function(e) {
-        e.preventDefault();
-      });
-    }
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
+      $('html, body').off('touchmove', function(e) {
+        e.preventDefault();
+      });
+      console.log("No!")
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
