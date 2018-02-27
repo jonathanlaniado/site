@@ -4,12 +4,6 @@ var hbMenuActive = false;
 $(document).ready(function() {
   $('.hamburger').click(function() {
     hbMenuActive = !hbMenuActive;
-    while (hbMenuActive) {
-      $('body').hasClass('yoyoyoyo');
-      $('html, body').on('touchmove', function(e) {
-        e.preventDefault();
-      });
-    }
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
@@ -21,6 +15,13 @@ $(document).ready(function() {
     }
   });
 });
+
+while (hbMenuActive) {
+  $('body').hasClass('yoyoyoyo');
+  $('html, body').on('touchmove', function(e) {
+    e.preventDefault();
+  });
+}
 
 // closes the hamburger menu if the window is resized
 $(window).resize(function() {
