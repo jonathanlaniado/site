@@ -9,7 +9,6 @@ $(document).ready(function() {
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').addClass('slide-out-top');
-      $('.hb-menu').removeClass('slide-in-top');
       $('html, body').off('touchmove', function(e) {
         e.preventDefault();
       });
