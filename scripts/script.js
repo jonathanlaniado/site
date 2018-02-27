@@ -1,3 +1,7 @@
+myapp = {
+  active: false
+};
+
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
@@ -13,10 +17,6 @@ $(document).ready(function() {
     }
   });
 });
-
-myapp = {
-  active: false
-};
 
 $('html, body').on('touchmove', function(e) {
   if (myapp.active) {
