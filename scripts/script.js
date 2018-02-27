@@ -13,15 +13,15 @@ $(document).ready(function() {
       $('.hb-menu').toggleClass('slide-in-top');
     }
     if ($('.hb-menu').hasClass('slide-out-top')) {
-      $('html, body').off('touchmove', function(e) {
+      $('hb-menu').off('touchmove', function(e) {
         e.preventDefault();
       });
-      console.log("No!");
+      console.log("N!");
     } else {
-      $('html, body').on('touchmove', function(e) {
+      $('hb-menu').on('touchmove', function(e) {
         e.preventDefault();
       });
-      console.log("Yes!")
+      console.log("Y!")
     }
   });
 });
