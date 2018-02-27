@@ -17,6 +17,7 @@ $(document).ready(function() {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
     }
+    console.log(hbMenuActive);
   });
 });
 
