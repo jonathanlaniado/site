@@ -7,7 +7,6 @@ $(document).ready(function() {
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
     if ($('.hb-menu').hasClass('menu-revealed')) {
-      $('.hb-menu').removeClass('menu-revealed');
       $('.hb-menu').addClass('slide-out-top');
       $('html, body').off('touchmove', function(e) {
         e.preventDefault();
