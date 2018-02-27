@@ -7,12 +7,12 @@ $(document).ready(function() {
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
     if ($('.hb-menu').hasClass('menu-selected')) {
-      $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').addClass('slide-out-top');
       $('html, body').off('touchmove', function(e) {
         e.preventDefault();
       });
       console.log("No!")
+      $('.hb-menu').toggleClass('menu-selected');
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').addClass('slide-in-top');
