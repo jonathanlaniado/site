@@ -13,17 +13,16 @@ $(document).ready(function() {
       $('.hb-menu').toggleClass('slide-in-top');
     }
     if ($('.hb-menu').hasClass('slide-out-top')) {
-      $('hb-menu').off('touchmove', function(e) {
+      $('html, body').off('touchmove', function(e) {
         e.preventDefault();
       });
-      console.log("N!");
+      console.log("No!");
     } else {
-      $('hb-menu').on('touchmove', function(e) {
+      $('html, body').on('touchmove', function(e) {
         e.preventDefault();
       });
-      console.log("Y!")
-    }
-  });
+      console.log("Yes!")
+    }  });
 });
 
 // closes the hamburger menu if the window is resized
