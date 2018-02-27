@@ -1,8 +1,8 @@
-function stopScrolling(e) {
+//target the entire page, and listen for touch events
+$('html, body').on('touchstart touchmove', function(e) {
+  //prevent native touch activity like scrolling
   e.preventDefault();
-  e.stopPropagation();
-  return false;
-}
+});
 
 // animates the hamburger menu popup
 $(document).ready(function() {
