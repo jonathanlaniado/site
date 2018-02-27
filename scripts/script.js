@@ -12,9 +12,8 @@ $(document).ready(function() {
         e.preventDefault();
       });
       console.log("No!")
-      $('.hb-menu').removeClass('menu-revealed');
     } else {
-      $('.hb-menu').addClass('menu-revealed');
+      $('.hb-menu').toggleClass('menu-revealed');
       $('.hb-menu').addClass('slide-in-top');
       $('.hb-menu').removeClass('slide-out-top');
       $('html, body').on('touchmove', function(e) {
