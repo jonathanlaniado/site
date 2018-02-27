@@ -1,3 +1,9 @@
+function stopScrolling(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  return false;
+}
+
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
