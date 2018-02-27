@@ -1,14 +1,18 @@
-myapp = {
-  active: false
-};
+var hbMenuActive = false;
 
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
+    hbMenuActive = !hbMenuActive;
+    if (hbMenuActive) {
+      print("Yes!");
+      $('html, body').on('touchmove', function(e) {
+        e.preventDefault();
+      });
+    }
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
-    myapp.active = true;
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
     } else {
@@ -18,11 +22,6 @@ $(document).ready(function() {
   });
 });
 
-$('html, body').on('touchmove', function(e) {
-  if (myapp.active) {
-    e.preventDefault();
-  }
-});
 // closes the hamburger menu if the window is resized
 $(window).resize(function() {
   if (($(window).width() > 813) && ($('.hb-menu').hasClass('menu-selected'))) {
