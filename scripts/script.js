@@ -10,6 +10,7 @@ $(document).ready(function() {
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('.hamburger').off('scroll mousewheel touchmove', stopScrolling);
+    $('body').off('scroll mousewheel touchmove', stopScrolling);
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
     } else {
