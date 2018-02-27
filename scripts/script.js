@@ -1,5 +1,4 @@
 var hbMenuActive = false;
-console.log("yes");
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
