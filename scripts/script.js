@@ -6,10 +6,13 @@ $(document).ready(function() {
     $('body').toggleClass('no-scroll');
     if ($('.hb-menu').hasClass('menu-revealed')) {
       $('.hb-menu').toggleClass('slide-out-top');
-      $('html, body').off('touchmove', false);
     } else {
       $('.hb-menu').toggleClass('menu-revealed');
       $('.hb-menu').toggleClass('slide-in-top');
+    }
+    if ($('.hb-menu').hasClass('slide-out-top')) {
+      $('html, body').off('touchmove', false);
+    } else {
       $('html, body').on('touchmove', false);
     }
   });
