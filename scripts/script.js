@@ -4,6 +4,7 @@ $(document).ready(function() {
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
+    myapp.active = true;
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
     } else {
@@ -16,6 +17,7 @@ $(document).ready(function() {
 myapp = {
   active: false
 };
+
 $('html, body').on('touchmove', function(e) {
   if (myapp.active) {
     e.preventDefault();
