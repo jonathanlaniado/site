@@ -2,27 +2,27 @@ var hbMenuActive = false;
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
-      hbMenuActive = !hbMenuActive;
-      $('.hamburger').toggleClass('is-active');
-      $('.hamburger-inner').toggleClass('white');
-      $('body').toggleClass('no-scroll');
-      if ($('.hb-menu').hasClass('menu-revealed')) {
-        $('.hb-menu').toggleClass('slide-out-top');
-      } else {
-        $('.hb-menu').toggleClass('menu-revealed');
-        $('.hb-menu').toggleClass('slide-in-top');
-      }
-      if ($('.hb-menu').hasClass('slide-out-top')) {
-        $('html, body').off('touchmove', function(e) {
-          e.preventDefault();
-        });
-        console.log("No!");
-      } else {
-        $('html, body').on('touchmove', function(e) {
-          e.preventDefault();
-        });
-        console.log("Yes!")
+    hbMenuActive = !hbMenuActive;
+    $('.hamburger').toggleClass('is-active');
+    $('.hamburger-inner').toggleClass('white');
+    $('body').toggleClass('no-scroll');
+    if ($('.hb-menu').hasClass('menu-revealed')) {
+      $('.hb-menu').toggleClass('slide-out-top');
+    } else {
+      $('.hb-menu').toggleClass('menu-revealed');
+      $('.hb-menu').toggleClass('slide-in-top');
+    }
+    if ($('.hb-menu').hasClass('slide-out-top')) {
+      $('html, body').off('touchmove', function(e) {
+        e.preventDefault();
       });
+      console.log("No!");
+    } else {
+      $('html, body').on('touchmove', function(e) {
+        e.preventDefault();
+      });
+      console.log("Yes!")
+    }
   });
 });
 
