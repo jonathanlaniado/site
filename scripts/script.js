@@ -15,6 +15,7 @@ $(document).ready(function() {
     } else {
       $('.hb-menu').toggleClass('menu-revealed');
       $('.hb-menu').addClass('slide-in-top');
+      $('.hb-menu').removeClass('slide-in-top');
       $('.hb-menu').removeClass('slide-out-top');
       $('html, body').on('touchmove', function(e) {
         e.preventDefault();
