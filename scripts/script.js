@@ -9,9 +9,7 @@ $(document).ready(function() {
   $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
-    $('.hamburger').off('scroll mousewheel touchmove', stopScrolling);
-    $('body').off('scroll mousewheel touchmove', stopScrolling);
-    $('html').off('scroll mousewheel touchmove', stopScrolling);
+    $('body').css('overflow', 'hidden');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
     } else {
