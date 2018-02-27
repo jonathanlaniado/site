@@ -9,7 +9,7 @@ $(document).ready(function() {
   $('.hamburger').click(function() {
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
-    $('html').toggleClass('no-scroll');
+    $('body').toggleClass('no-scroll');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
     } else {
