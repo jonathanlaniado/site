@@ -12,7 +12,7 @@ $(document).ready(function() {
         e.preventDefault();
       });
       console.log("No!")
-      $('.hb-menu').toggleClass('menu-selected');
+      $('.hb-menu').removeClass('menu-selected');
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').addClass('slide-in-top');
