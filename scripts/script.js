@@ -1,12 +1,13 @@
-//target the entire page, and listen for touch events
 $('html, body').on('touchmove', function(e) {
-  //prevent native touch activity like scrolling
   e.preventDefault();
 });
+
+var hbMenuActive = false;
 
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
+    hbMenuActive = true;
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
