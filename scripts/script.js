@@ -8,6 +8,8 @@ $(document).ready(function() {
       $('html, body').on('touchmove', function(e) {
         e.preventDefault();
       });
+    } else {
+      console.log("No!")
     }
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
