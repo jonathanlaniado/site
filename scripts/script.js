@@ -7,13 +7,14 @@ $(document).ready(function() {
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
     if ($('.hb-menu').hasClass('menu-revealed')) {
+      $('.hb-menu').removeClass('menu-revealed');
       $('.hb-menu').addClass('slide-out-top');
       $('html, body').off('touchmove', function(e) {
         e.preventDefault();
       });
       console.log("No!")
     } else {
-      $('.hb-menu').toggleClass('menu-revealed');
+      $('.hb-menu').addClass('menu-revealed');
       $('.hb-menu').addClass('slide-in-top');
       $('.hb-menu').removeClass('slide-out-top');
       $('html, body').on('touchmove', function(e) {
