@@ -27,7 +27,7 @@
 }
 
 .hamburger-inner {
-  display: block;
+  display: fixed;
   top: 50%;
   margin-top: -2px;
 }
