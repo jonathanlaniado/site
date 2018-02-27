@@ -1,9 +1,6 @@
-var hbMenuActive = false;
-
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
-    hbMenuActive = !hbMenuActive;
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
@@ -16,12 +13,9 @@ $(document).ready(function() {
   });
 });
 
-while (hbMenuActive) {
-  print("yes");
-  $('html, body').on('touchmove', function(e) {
-    e.preventDefault();
-  });
-}
+$('html, body').on('touchmove', function(e) {
+  e.preventDefault();
+});
 
 // closes the hamburger menu if the window is resized
 $(window).resize(function() {
