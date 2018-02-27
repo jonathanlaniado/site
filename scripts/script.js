@@ -1,11 +1,11 @@
 var hbMenuActive = false;
-print("yes");
+console.log("yes");
 // animates the hamburger menu popup
 $(document).ready(function() {
   $('.hamburger').click(function() {
     hbMenuActive = !hbMenuActive;
     if (hbMenuActive) {
-      print("Yes!");
+      console.log("Yes!");
       $('html, body').on('touchmove', function(e) {
         e.preventDefault();
       });
