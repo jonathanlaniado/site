@@ -8,6 +8,7 @@ var hbMenuActive = false;
 $(document).ready(function() {
   $('.hamburger').click(function() {
     hbMenuActive = true;
+    console.log(hbMenuActive);
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
     $('body').toggleClass('no-scroll');
@@ -17,7 +18,6 @@ $(document).ready(function() {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
     }
-    console.log(hbMenuActive);
   });
 });
 
