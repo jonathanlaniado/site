@@ -10,6 +10,9 @@ $(document).ready(function() {
       });
     } else {
       console.log("No!")
+      $('html, body').on('touchmove', function(e) {
+        e.preventDefault();
+      });
     }
     $('.hamburger').toggleClass('is-active');
     $('.hamburger-inner').toggleClass('white');
