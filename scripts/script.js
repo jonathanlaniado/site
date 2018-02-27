@@ -17,7 +17,7 @@ $(document).ready(function() {
 });
 
 while (hbMenuActive) {
-  $('body').toggle('yoyoyoyo');
+  print("yes");
   $('html, body').on('touchmove', function(e) {
     e.preventDefault();
   });
