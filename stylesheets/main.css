@@ -35,8 +35,7 @@ body {
   width: 80%;
 }
 
-body.noScroll {
-  /* ...or body.dialogShowing */
+body.noScroll, body.dialogShowing {
   overflow: hidden;
 }
 
