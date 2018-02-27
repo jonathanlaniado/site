@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('.hamburger-inner').toggleClass('white');
     if ($('.hb-menu').hasClass('menu-selected')) {
       $('.hb-menu').toggleClass('slide-out-top');
-      $('body').css('overflow', initial);
+      $('body').css('overflow', '');
     } else {
       $('.hb-menu').toggleClass('menu-selected');
       $('.hb-menu').toggleClass('slide-in-top');
