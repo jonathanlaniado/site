@@ -8,18 +8,22 @@ $(document).ready(function() {
     $('body').toggleClass('no-scroll');
     if ($('.hb-menu').hasClass('menu-revealed')) {
       $('.hb-menu').toggleClass('slide-out-top');
-      $('html, body').off('touchmove', function(e) {
-        e.preventDefault();
-      });
-      console.log("No!")
     } else {
       $('.hb-menu').toggleClass('menu-revealed');
       $('.hb-menu').toggleClass('slide-in-top');
-      $('html, body').on('touchmove', function(e) {
-        e.preventDefault();
-      });
-      console.log("Yes!")
     }
+  });
+  if ($('.hb-menu').hasClass('slide-out-top')) {
+    $('html, body').off('touchmove', function(e) {
+      e.preventDefault();
+    });
+    console.log("No!")
+
+  } else {
+    $('html, body').on('touchmove', function(e) {
+      e.preventDefault();
+    });
+    console.log("Yes!")
   });
 });
 
