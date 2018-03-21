@@ -2,58 +2,58 @@
 <html>
 
 <head>
-    <title>Calendar Event Generator – Jonathan Laniado</title>
-    <link href="main.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="calendar.js"></script>
-    <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  <title>Calendar Event Generator – Jonathan Laniado</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="calendar.js"></script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-101024663-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
+    ga('create', 'UA-101024663-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </head>
 
 <body><span class="back"><a href="../projects.html">&#8592;&nbsp;&nbsp;Back to Projects</a></span>
-    <div class="heading"> <img class="heading-icon" src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_calendar_512x512_Mar-2017.png" />
-        <h1>Calendar Event Generator</h1>
+  <div class="heading"> <img class="heading-icon" src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_calendar_512x512_Mar-2017.png" />
+    <h1>Calendar Event Generator</h1>
+  </div>
+  <p class="instructions">Use the tool below to generate a Google Calendar link and an .ics file. Note that this tool does not support older versions of Firefox and Internet Explorer.</p>
+  <form id="form1" onsubmit="return generate();" autocomplete="off">
+    <!---------- TITLE ----------->
+    <div class="form-container">
+      <div class="form-field-container"><span class="field-name">Title<br></span>
+        <input class="form-field width-100" id="title" type="text" data-value-missing="An event title must be entered." placeholder="The title of your calendar event" /> </div>
     </div>
-    <p class="instructions">Use the tool below to generate a Google Calendar link and an .ics file. Note that this tool does not support older versions of Firefox and Internet Explorer.</p>
-    <form id="form1" onsubmit="return generate();" autocomplete="off">
-        <!---------- TITLE ----------->
-        <div class="form-container">
-            <div class="form-field-container"><span class="field-name">Title<br></span>
-                <input class="form-field width-100" id="title" type="text" data-value-missing="An event title must be entered." placeholder="The title of your calendar event" /> </div>
-        </div>
-        <!---------- LOCATION ----------->
-        <div class="form-container">
-            <div class="form-field-container"><span class="field-name">Location<br></span>
-                <input class="form-field width-100" id="location" type="text" placeholder="Your calendar event's location" /> </div>
-        </div>
-        <!---------- DETAILS ----------->
-        <div class="form-container">
-            <div class="form-field-container"><span class="field-name">Details<br></span>
-                <textarea class="form-field width-100" id="details" rows="4" placeholder="Additional details about your calendar event"></textarea>
-            </div>
-        </div>
-        <!---------- TIME ZONE ----------->
-        <div class="form-container">
-            <div class="form-field-container"><span class="field-name">Time Zone<br></span>
-                <select required class="form-field" id="time-zone" data-value-missing="Please choose a time zone.">
+    <!---------- LOCATION ----------->
+    <div class="form-container">
+      <div class="form-field-container"><span class="field-name">Location<br></span>
+        <input class="form-field width-100" id="location" type="text" placeholder="Your calendar event's location" /> </div>
+    </div>
+    <!---------- DETAILS ----------->
+    <div class="form-container">
+      <div class="form-field-container"><span class="field-name">Details<br></span>
+        <textarea class="form-field width-100" id="details" rows="4" placeholder="Additional details about your calendar event"></textarea>
+      </div>
+    </div>
+    <!---------- TIME ZONE ----------->
+    <div class="form-container">
+      <div class="form-field-container"><span class="field-name">Time Zone<br></span>
+        <select required class="form-field" id="time-zone" data-value-missing="Please choose a time zone.">
                     <option value="Hawaiian Standard Time"
                             tz="Pacific/Honolulu"
                             tzid="Hawaiian Standard Time"
@@ -485,248 +485,248 @@
                         (UTC+13:00) Samoa
                     </option>
                 </select>
-            </div>
-        </div>
-        <!---------- START DATE ----------->
-        <div class="form-container">
-            <div class="form-field-container date">
-                <div class="width-100" id="month-container" style="white-space: nowrap;"><span class="field-name">Start Date<br></span>
-                    <select required class="form-field width-100" id="start-month" data-value-missing="Please choose a month.">
-                        <option value="" disabled selected>Month</option>
-                        <option value="0">January</option>
-                        <option value="1">February</option>
-                        <option value="2">March</option>
-                        <option value="3">April</option>
-                        <option value="4">May</option>
-                        <option value="5">June</option>
-                        <option value="6">July</option>
-                        <option value="7">August</option>
-                        <option value="8">September</option>
-                        <option value="9">October</option>
-                        <option value="10">November</option>
-                        <option value="11">December</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer"></div>
-                <div class="width-100" id="day-container"><span class="field-name"><br></span>
-                    <select required class="form-field width-100" id="start-day" data-value-missing="Please choose a day.">
-                        <option value="" disabled selected>Day</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
-                        <option value="22">22</option>
-                        <option value="23">23</option>
-                        <option value="24">24</option>
-                        <option value="25">25</option>
-                        <option value="26">26</option>
-                        <option value="27">27</option>
-                        <option value="28">28</option>
-                        <option value="29">29</option>
-                        <option value="30">30</option>
-                        <option value="31">31</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer">
-                    <br>,</div>
-                <div class="width-100" id="year-container"><span class="field-name"> <br></span>
-                    <select required class="form-field width-100" id="start-year" data-value-missing="Please choose a year.">
-                        <option value="" disabled selected>Year</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer">
-                    <br /> </div>
-                <div class="width-100" id="hour-container" style="white-space: nowrap;"><span class="field-name"> Start Time<br></span>
-                    <select required class="form-field width-100" id="start-hour" data-value-missing="Please choose an hour.">
-                        <option value="" disabled selected>Hour</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="0">12</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer">
-                    <br>:</div>
-                <div class="width-100" id="minutes-container"><span class="field-name"> <br></span>
-                    <select required class="form-field width-100" id="start-minutes" data-value-missing="Please choose a minute.">
-                        <option value="" disabled selected>Minutes</option>
-                        <option value="0">00</option>
-                        <option value="15">15</option>
-                        <option value="30">30</option>
-                        <option value="45">45</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer"></div>
-                <div class="width-100"><span class="field-name"> <br></span>
-                    <select required class="form-field width-100" id="start-meridiem" data-value-missing="Please choose AM or PM.">
-                        <option value="" disabled selected>AM/PM</option>
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <!---------- END DATE ----------->
-        <div class="form-container">
-            <div class="form-field-container date">
-                <div class="width-100" id="month-container" style="white-space: nowrap;"><span class="field-name">End Date<br></span>
-                    <select required class="form-field width-100" id="end-month" data-value-missing="Please choose a month.">
-                        <option value="" disabled selected>Month</option>
-                        <option value="0">January</option>
-                        <option value="1">February</option>
-                        <option value="2">March</option>
-                        <option value="3">April</option>
-                        <option value="4">May</option>
-                        <option value="5">June</option>
-                        <option value="6">July</option>
-                        <option value="7">August</option>
-                        <option value="8">September</option>
-                        <option value="9">October</option>
-                        <option value="10">November</option>
-                        <option value="11">December</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer"></div>
-                <div class="width-100" id="day-container"><span class="field-name"><br></span>
-                    <select required class="form-field width-100" id="end-day" data-value-missing="Please choose a day.">
-                        <option value="" disabled selected>Day</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16</option>
-                        <option value="17">17</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
-                        <option value="22">22</option>
-                        <option value="23">23</option>
-                        <option value="24">24</option>
-                        <option value="25">25</option>
-                        <option value="26">26</option>
-                        <option value="27">27</option>
-                        <option value="28">28</option>
-                        <option value="29">29</option>
-                        <option value="30">30</option>
-                        <option value="31">31</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer">
-                    <br>,</div>
-                <div class="width-100" id="year-container"><span class="field-name"> <br></span>
-                    <select required class="form-field width-100" id="end-year" data-value-missing="Please choose a year.">
-                        <option value="" disabled selected>Year</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer"></div>
-                <div class="width-100" id="hour-container" style="white-space: nowrap;"><span class="field-name"> End Time<br></span>
-                    <select required class="form-field width-100" id="end-hour" data-value-missing="Please choose an hour.">
-                        <option value="" disabled selected>Hour</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="0">12</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer">
-                    <br>:</div>
-                <div class="width-100" id="minutes-container"><span class="field-name"> <br></span>
-                    <select required class="form-field width-100" id="end-minutes" data-value-missing="Please choose a minute.">
-                        <option value="" disabled selected>Minutes</option>
-                        <option value="0">00</option>
-                        <option value="15">15</option>
-                        <option value="30">30</option>
-                        <option value="45">45</option>
-                    </select>
-                </div>
-                <div class="form-field-spacer"></div>
-                <div class="width-100"><span class="field-name"> <br></span>
-                    <select required class="form-field width-100" id="end-meridiem" data-value-missing="Please choose AM or PM.">
-                        <option value="" disabled selected>AM/PM</option>
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <!---------- GENERATE & RESET ----------->
-        <div class="form-container">
-            <div class="form-field-container" id="generate-reset">
-                <input class="form-field" id="generator" type="submit" value="Generate" onsubmit="return generate();" />
-                <input class="form-field" id="reset" type="button" value="Reset" onclick="return resetter()"> </div>
-        </div>
-    </form>
-    <!---------- OUTPUT ----------->
-    <div id="results">
-        <div class="results-padding">
-            <div class="output-container"><span>Your Google Calendar URL:</span>
-                <div class="output-buttons">
-                    <a id="tooltip-copy" title="Copy to clipboard"><img src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_copy_512x512_May-2017.png" class="output-icon" onclick="copyToClipboard('#google-calendar-output')" /></a>
-                    <a href="" id="tooltip-tab" target="_blank" title="Open in new tab"> <img src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_tabs_512x512_May-2017.png" class="output-icon" /> </a>
-                </div>
-            </div>
-            <pre><output id="google-calendar-output"></output></pre> </div>
-        <div class="results-padding">
-            <div class="output-container"><span>Your ICS file:</span>
-                <div class="output-buttons">
-                    <a href="" id="tooltip-download" title="Download"> <img src="https://pages.awscloud.com/rs/112-TZM-766/images/EV_download-2_512x512_May-2017.png" class="output-icon" /> </a>
-                </div>
-            </div>
-            <pre><output id="ics-output"></output></pre> </div>
+      </div>
     </div>
+    <!---------- START DATE ----------->
+    <div class="form-container">
+      <div class="form-field-container date">
+        <div class="width-100" id="month-container" style="white-space: nowrap;"><span class="field-name">Start Date<br></span>
+          <select required class="form-field width-100" id="start-month" data-value-missing="Please choose a month.">
+                        <option value="" disabled selected>Month</option>
+                        <option value="0">January</option>
+                        <option value="1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer"></div>
+        <div class="width-100" id="day-container"><span class="field-name"><br></span>
+          <select required class="form-field width-100" id="start-day" data-value-missing="Please choose a day.">
+                        <option value="" disabled selected>Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer">
+          <br>,</div>
+        <div class="width-100" id="year-container"><span class="field-name"> <br></span>
+          <select required class="form-field width-100" id="start-year" data-value-missing="Please choose a year.">
+                        <option value="" disabled selected>Year</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer">
+          <br /> </div>
+        <div class="width-100" id="hour-container" style="white-space: nowrap;"><span class="field-name"> Start Time<br></span>
+          <select required class="form-field width-100" id="start-hour" data-value-missing="Please choose an hour.">
+                        <option value="" disabled selected>Hour</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="0">12</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer">
+          <br>:</div>
+        <div class="width-100" id="minutes-container"><span class="field-name"> <br></span>
+          <select required class="form-field width-100" id="start-minutes" data-value-missing="Please choose a minute.">
+                        <option value="" disabled selected>Minutes</option>
+                        <option value="0">00</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer"></div>
+        <div class="width-100"><span class="field-name"> <br></span>
+          <select required class="form-field width-100" id="start-meridiem" data-value-missing="Please choose AM or PM.">
+                        <option value="" disabled selected>AM/PM</option>
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+        </div>
+      </div>
+    </div>
+    <!---------- END DATE ----------->
+    <div class="form-container">
+      <div class="form-field-container date">
+        <div class="width-100" id="month-container" style="white-space: nowrap;"><span class="field-name">End Date<br></span>
+          <select required class="form-field width-100" id="end-month" data-value-missing="Please choose a month.">
+                        <option value="" disabled selected>Month</option>
+                        <option value="0">January</option>
+                        <option value="1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer"></div>
+        <div class="width-100" id="day-container"><span class="field-name"><br></span>
+          <select required class="form-field width-100" id="end-day" data-value-missing="Please choose a day.">
+                        <option value="" disabled selected>Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer">
+          <br>,</div>
+        <div class="width-100" id="year-container"><span class="field-name"> <br></span>
+          <select required class="form-field width-100" id="end-year" data-value-missing="Please choose a year.">
+                        <option value="" disabled selected>Year</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer"></div>
+        <div class="width-100" id="hour-container" style="white-space: nowrap;"><span class="field-name"> End Time<br></span>
+          <select required class="form-field width-100" id="end-hour" data-value-missing="Please choose an hour.">
+                        <option value="" disabled selected>Hour</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="0">12</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer">
+          <br>:</div>
+        <div class="width-100" id="minutes-container"><span class="field-name"> <br></span>
+          <select required class="form-field width-100" id="end-minutes" data-value-missing="Please choose a minute.">
+                        <option value="" disabled selected>Minutes</option>
+                        <option value="0">00</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                    </select>
+        </div>
+        <div class="form-field-spacer"></div>
+        <div class="width-100"><span class="field-name"> <br></span>
+          <select required class="form-field width-100" id="end-meridiem" data-value-missing="Please choose AM or PM.">
+                        <option value="" disabled selected>AM/PM</option>
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+        </div>
+      </div>
+    </div>
+    <!---------- GENERATE & RESET ----------->
+    <div class="form-container">
+      <div class="form-field-container" id="generate-reset">
+        <input class="form-field" id="generator" type="submit" value="Generate" onsubmit="return generate();" />
+        <input class="form-field" id="reset" type="button" value="Reset" onclick="return resetter()"> </div>
+    </div>
+  </form>
+  <!---------- OUTPUT ----------->
+  <div id="results">
+    <div class="results-padding">
+      <div class="output-container"><span>Your Google Calendar URL:</span>
+        <div class="output-buttons">
+          <a id="tooltip-copy" title="Copy to clipboard"><img src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_copy_512x512_May-2017.png" class="output-icon" onclick="copyToClipboard('#google-calendar-output')" /></a>
+          <a href="" id="tooltip-tab" target="_blank" title="Open in new tab"> <img src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_tabs_512x512_May-2017.png" class="output-icon" /> </a>
+        </div>
+      </div>
+      <pre><output id="google-calendar-output"></output></pre> </div>
+    <div class="results-padding">
+      <div class="output-container"><span>Your ICS file:</span>
+        <div class="output-buttons">
+          <a href="" id="tooltip-download" title="Download"> <img src="https://pages.awscloud.com/rs/112-TZM-766/images/EV_download-2_512x512_May-2017.png" class="output-icon" /> </a>
+        </div>
+      </div>
+      <pre><output id="ics-output"></output></pre> </div>
+  </div>
 </body>
 
 </html>
