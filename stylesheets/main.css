@@ -171,6 +171,11 @@ nav {
   height: 80px;
 }
 
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .profile-image {
   width: 250px;
 }
