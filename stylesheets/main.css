@@ -183,6 +183,8 @@ nav {
 
 footer {
   margin-bottom: 150px;
-}.button-wrapper.by {
+}
+
+.button-wrapper.by {
   display: none !important;
 }
