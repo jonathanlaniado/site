@@ -39,6 +39,6 @@ $(document).ready(function() {
 
 // changes CSS on typeform
 $(document).ready(function() {
-  var iFrameDOM = $("iframe#typeform-full").contents();
+  var iFrameDOM = $("typeform-full").contents();
   iFrameDOM.find(".button-wrapper.by").css("display", "none");
 });
