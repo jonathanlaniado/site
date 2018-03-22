@@ -36,11 +36,3 @@ $(document).ready(function() {
     }, 400);
   });
 });
-
-// changes CSS on typeform
-$(document).ready(function() {
-  $('.button.general.full.enabled.hover-effect').click(function() {
-    var iFrameDOM = $("#typeform-full").contents();
-    iFrameDOM.find(".question").css("text-transform", "uppercase !important");
-  });
-});
