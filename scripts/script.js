@@ -41,6 +41,6 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('.button.general.full.enabled.hover-effect').click(function() {
     var iFrameDOM = $("#typeform-full").contents();
-    iFrameDOM.find(".question").css("text-transform", "uppercase");
+    iFrameDOM.find(".question").css("text-transform", "uppercase !important");
   });
 });
