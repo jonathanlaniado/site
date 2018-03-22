@@ -181,6 +181,11 @@ nav {
   height: 250px;
 }
 
+.typeform-widget {
+  width: 100%;
+  height: 100%;
+}
+
 footer {
   margin-bottom: 150px;
 }
