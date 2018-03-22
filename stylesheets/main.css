@@ -77,7 +77,6 @@ nav {
   flex-flow: row nowrap;
   justify-content: center;
   margin-bottom: 40px;
-  height: 400px;
 }
 
 .nav-item {
