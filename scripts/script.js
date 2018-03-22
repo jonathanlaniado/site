@@ -36,7 +36,3 @@ $(document).ready(function() {
     }, 400);
   });
 });
-
-$(document).ready(function() {
-  $('.typeform-widget').height($(window).height() - $('nav').height());
-});
