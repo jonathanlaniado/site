@@ -36,3 +36,9 @@ $(document).ready(function() {
     }, 400);
   });
 });
+
+// changes CSS on typeform
+$(document).ready(function() {
+  var iFrameDOM = $("iframe#typeform-full").contents();
+  iFrameDOM.find(".button-wrapper.by").css("display", "none");
+});
