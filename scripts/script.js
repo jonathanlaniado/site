@@ -39,6 +39,6 @@ $(document).ready(function() {
 
 // changes CSS on typeform
 $(document).ready(function() {
-  var iFrameDOM = $("typeform-full").contents();
-  iFrameDOM.find(".button-wrapper.by").css("display", "none");
+  var iFrameDOM = $("#typeform-full").contents();
+  iFrameDOM.find(".question").css("text-transform", "uppercase");
 });
