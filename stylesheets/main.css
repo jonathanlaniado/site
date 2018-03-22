@@ -189,6 +189,8 @@ nav {
 .typeform-widget {
   width: 100%;
   flex: 1;
+  margin: 0;
+  min-height: 100vh;
 }
 
 footer {
