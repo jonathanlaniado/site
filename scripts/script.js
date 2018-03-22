@@ -39,6 +39,8 @@ $(document).ready(function() {
 
 // changes CSS on typeform
 $(document).ready(function() {
-  var iFrameDOM = $("#typeform-full").contents();
-  iFrameDOM.find(".question").css("text-transform", "uppercase");
+  $('.button.general.full.enabled.hover-effect').click(function() {
+    var iFrameDOM = $("#typeform-full").contents();
+    iFrameDOM.find(".question").css("text-transform", "uppercase");
+  });
 });
