@@ -38,5 +38,5 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $('.typeform-widget').height($(window).height() - $('nav').height() - $('nav').height());
+  $('.typeform-widget').height($(window).height() - $('nav').height() - $('nav').height() - $('nav').height());
 });
