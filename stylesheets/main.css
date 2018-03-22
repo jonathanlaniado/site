@@ -181,17 +181,6 @@ nav {
   height: 250px;
 }
 
-.typeform-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.typeform-widget {
-  width: 100%;
-  flex: 1;
-}
-
 footer {
   margin-bottom: 150px;
 }
