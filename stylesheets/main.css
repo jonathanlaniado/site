@@ -1,3 +1,7 @@
+.button-wrapper.by {
+  display: none !important;
+}
+
 @media (min-width: 814px) {
   .hamburger {
     display: none !important;
@@ -183,8 +187,4 @@ nav {
 
 footer {
   margin-bottom: 150px;
-}
-
-.button-wrapper.by {
-  display: none;
 }
