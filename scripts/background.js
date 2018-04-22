@@ -14,7 +14,7 @@ jQuery.ajax({
   .done(function(data, textStatus, jqXHR) {
     var paths = [];
     Object.keys(data).forEach(function(key) {
-      var val = data[key]["html_url"];
+      var val = data[key]["path"];
       paths.push(val);
     });
     console.log(paths)
