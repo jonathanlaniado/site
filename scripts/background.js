@@ -17,6 +17,7 @@ jQuery.ajax({
       var val = data[key]["path"];
       paths.push(val);
     });
+    console.log(paths)
     paths.shift();
     var rand = getRand(0, paths.length);
     $('html').css('background-image', 'url(' + paths[rand] + ')');
