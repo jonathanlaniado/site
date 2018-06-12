@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<!-- Made with <3 by Jonathan Laniado (laniadoj@).-->
+
+<head>
+    <title>Marketing Toolkit &ndash; AWS Map URL &amp; Image Generator</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-101024663-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script>
+        // validates the form
+        var wrapper = hyperform(window);
+        // instantiates document.getElementById()
+        var id = function (id) {
+            return document.getElementById(id);
+        };
+        // generates the filename based upon the form fields
+        function generate() {
+            // instantiates the initial variables
+            var location = id('location').value.replace(/\W/g, '+').replace(/[+]{2,}/g, '+');
+            var zoom = id('zoom').value;
+            var width = id('width').value;
+            var height = id('height').value;
+            var type = id('type').value;
+            // builds the map URLs
+            var mapImage = "https://maps.googleapis.com/maps/api/staticmap?center=" + location + "&zoom=" + zoom + "&scale=2&size=" + width + "x" + height + "&maptype=" + type + "&key=AIzaSyBD7a4Tx6sggXtcFB2El11r4wBnE0qOWlo&format=jpg&visual_refresh=true&markers=icon:https://pages.awscloud.com/rs/112-TZM-766/images/EV_map-marker_64x64_Mar-2017.png%7Cshadow:true%7C" + location;
+            var mapDirections = "https://www.google.com/maps/dir//" + location + "/";
+            // reveals the output's results
+            id('map-url-output').value = mapImage;
+            id('directions-url-output').value = mapDirections;
+            id('image-url-output').src = mapImage;
+            id('results').style.display = 'block';
+            id('tooltip-tab-image').href = mapImage;
+            id('tooltip-tab-directions').href = mapDirections;
+            // scrolls down to the bottom of the page
+            var documentHeight = document.documentElement.offsetHeight;
+            var viewportHeight = window.innerHeight;
+            window.scrollTo(0, documentHeight - viewportHeight);
+            return false;
+        }
+        // copies the output to the user's clipboard
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+        // resets the fields by reloading the page
+        function resetter() {
+            location.reload(true);
+        }
+    </script>
+</head>
+
+<body>
+    <!---------- TOOLKIT -----------><span class="back"><a href="marketing-toolkit.html">&#8592;&nbsp;&nbsp;Back to Toolkit</a></span>
+    <!---------- HEADING ----------->
+    <div class="heading"> <img class="heading-icon" src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_map_512x512_Mar-2017.png" />
+        <h1>AWS Map URL &amp; Image Generator</h1> </div>
+    <p>Use the tool below to generate an image of a specified location. All fields are required.
+        <br />
+        <br /> </p>
+    <form id="form1" onsubmit="return generate();" autocomplete="off">
+        <!---------- LOCATION ----------->
+        <div class="form-container">
+            <div class="form-field-container"><span class="field-name">Location<br /></span>
+                <input required class="form-field width-100" id="location" type="text" value="Seattle, WA" data-value-missing="A location must be entered." placeholder="The center location of your map image" /> </div>
+        </div>
+        <!---------- ZOOM ----------->
+        <div class="form-container">
+            <div class="form-field-container"><span class="field-name">Zoom Level<br /></span>
+                <select class="form-field" id="zoom">
+                    <option selected value="11">Extremely Far</option>
+                    <option value="12">Very Far</option>
+                    <option value="13">Far</option>
+                    <option value="14">Close</option>
+                    <option value="15">Very Close</option>
+                    <option value="16">Extremely Close</option>
+                </select>
+            </div>
+        </div>
+        <!---------- DIMENSIONS ----------->
+        <div class="form-container">
+            <div class="form-field-container" id="dimensions" name="dimensions">
+                <div class="width-100" id="width-container"><span class="field-name">Width<br /></span>
+                    <input required class="form-field width-100" name="width" id="width" type="number" placeholder="Width in pixels" value="600" min="1" max="1280" data-bad-input="Please enter a number between 1 and 1280 without commas." /> </div>
+                <div class="form-field-spacer"></div>
+                <div class="width-100" id="height-container"><span class="field-name">Height<br /></span>
+                    <input required class="form-field width-100" name="height" id="height" type="number" placeholder="Height in pixels" value="300" min="1" max="1280" data-bad-input="Please enter a number between 1 and 1280 without commas." /> </div>
+            </div>
+        </div>
+        <!---------- TYPE ----------->
+        <div class="form-container">
+            <div class="form-field-container"><span class="field-name">Type<br /></span>
+                <select class="form-field" id="type">
+                    <option selected value="roadmap">Roadmap</option>
+                    <option value="terrain">Terrain</option>
+                    <option value="satellite">Satellite</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+            </div>
+        </div>
+        <!---------- GENERATE & RESET ----------->
+        <div class="form-container">
+            <div class="form-field-container" id="generate-reset">
+                <input class="form-field" id="generator" type="submit" value="Generate" onsubmit="return generate();" />
+                <input class="form-field" id="reset" type="button" value="Reset" onclick="return resetter()"> </div>
+        </div>
+    </form>
+    <!---------- OUTPUT ----------->
+    <div id="results">
+        <div class="results-padding"><span>Your map image:</span>
+            <br />
+            <br /><img id="image-url-output" src=""></div>
+        <div class="results-padding">
+            <div class="output-container"> <span>Your map image URL:</span>
+                <div class="output-buttons">
+                    <a id="tooltip-copy-image" title="Copy to clipboard"> <img src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_copy_512x512_May-2017.png" class="output-icon" onclick="copyToClipboard('#map-url-output')" /> </a>
+                    <a href="" id="tooltip-tab-image" target="_blank" title="Open in new tab"> <img src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_tabs_512x512_May-2017.png" class="output-icon" /> </a>
+                </div>
+            </div> <pre><output id="map-url-output"></output></pre> </div>
+        <div class="results-padding">
+            <div class="output-container"> <span>Your map directions URL:</span>
+                <div class="output-buttons">
+                    <a id="tooltip-copy-directions" title="Copy to clipboard"> <img src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_copy_512x512_May-2017.png" class="output-icon" onclick="copyToClipboard('#directions-url-output')" /> </a>
+                    <a href="" id="tooltip-tab-directions" target="_blank" title="Open in new tab"> <img src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_tabs_512x512_May-2017.png" class="output-icon" /> </a>
+                </div>
+            </div> <pre><output id="directions-url-output"></output></pre> </div>
+    </div>
+</body>
+
+</html>

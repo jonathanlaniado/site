@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<!-- Made with <3 by Jonathan Laniado (laniadoj@).-->
+
+<head>
+    <title>Marketing Toolkit &ndash; AWS Tracking Code Generator</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-101024663-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script>
+        // validates the form
+        var wrapper = hyperform(window);
+        // instantiates document.getElementById()
+        var id = function (id) {
+            return document.getElementById(id);
+        };
+        // reveal optional form fields
+        function revealOptional() {
+            if (id('optional').checked == true) {
+                id('optional-container').style.display = 'block';
+            }
+            else {
+                id('optional-container').style.display = 'none';
+            }
+        }
+        // modifies the form fields depending on Marketing Channel's value
+        function channelVal() {
+            if (id('channel').value === "EM") {
+                // hides or reveals form fields
+                id('campaign-type-container').style.display = 'block';
+                id('campaign-category-container').style.display = 'block';
+                id('name-container').style.display = 'none';
+                id('region-country-container').style.display = 'flex';
+                id('language-container').style.display = 'none';
+                id('publisher-container').style.display = 'none';
+                id('email-publisher-container').style.display = 'block';
+                id('product-container').style.display = 'none';
+                id('medium-container').style.display = 'none';
+                // makes form fields required or optional
+                id('campaign-type').required = true;
+                id('campaign-category').required = true;
+                id('name').required = false;
+                id('region').required = true;
+                id('country').required = true;
+                // resets the form field values
+                id('name').value = '';
+                id('language').selectedIndex = 0;
+                id('medium').value = '';
+                id('product').selectedIndex = 0;
+                id('publisher').selectedIndex = 0;
+            }
+            else if (id('channel').value === "HA") {
+                // hides or reveals form fields
+                id('campaign-type-container').style.display = 'none';
+                id('campaign-category-container').style.display = 'none';
+                id('name-container').style.display = 'block';
+                id('region-country-container').style.display = 'none';
+                id('language-container').style.display = 'block';
+                id('publisher-container').style.display = 'none';
+                id('email-publisher-container').style.display = 'none';
+                id('product-container').style.display = 'none';
+                id('medium-container').style.display = 'block';
+                // makes form fields required or optional
+                id('campaign-type').required = false;
+                id('campaign-category').required = false;
+                id('name').required = true;
+                id('region').required = false;
+                id('country').required = false;
+                // resets the form field values
+                id('campaign-type').selectedIndex = 0;
+                id('campaign-category').selectedIndex = 0;
+                id('region').selectedIndex = 0;
+                id('country').selectedIndex = 0;
+                id('publisher').selectedIndex = 0;
+                id('email-publisher').selectedIndex = 0;
+                id('product').selectedIndex = 0;
+            }
+            else {
+                // hides or reveals form fields
+                id('campaign-type-container').style.display = 'none';
+                id('campaign-category-container').style.display = 'none';
+                id('name-container').style.display = 'block';
+                id('region-country-container').style.display = 'flex';
+                id('language-container').style.display = 'none';
+                id('publisher-container').style.display = 'block';
+                id('email-publisher-container').style.display = 'none';
+                id('product-container').style.display = 'flex';
+                id('medium-container').style.display = 'block';
+                // makes form fields required or optional
+                id('campaign-type').required = false;
+                id('campaign-category').required = false;
+                id('name').required = true;
+                id('region').required = true;
+                id('country').required = true;
+                // resets the form field values
+                id('campaign-type').selectedIndex = 0;
+                id('campaign-category').selectedIndex = 0;
+                id('language').selectedIndex = 0;
+                id('publisher').selectedIndex = 0;
+            }
+        }
+        // cleans strings so they are URL-friendly
+        function cleanStr(str) {
+            return str.toLowerCase().replace(/[^\w]+/g, '');
+        }
+        // clears the string if it ends with "="
+        function clearStr(str) {
+            if (str.endsWith('=')) {
+                return "";
+            }
+            else {
+                return str;
+            }
+        }
+        // places all the clean form field values into an array
+        function buildStr() {
+            var channel = "?sc_channel=" + id('channel').value.toLowerCase();
+            var houseChannel = "?sc_ichannel=" + id('channel').value.toLowerCase();
+            var name = "&sc_campaign=" + cleanStr(id('name').value);
+            var houseName = "&sc_icampaign=" + id('outcome').value.toLowerCase() + "_" + cleanStr(id('name').value);
+            var campaignType = id('campaign-type').value.toLowerCase();
+            var campaignCategory = id('campaign-category').value.toLowerCase();
+            var emailContent = "&sc_content=" + id('outcome').value + "_" + campaignType + "_" + campaignCategory;
+            var content = "&sc_icontent=" + cleanStr(id('content').value);
+            var houseContent = "&sc_content=" + cleanStr(id('content').value);
+            var details = "&sc_detail=" + cleanStr(id('details').value);
+            var region = "&sc_geo=" + id('region').value.toLowerCase();
+            var country = "&sc_country=" + id('country').value.toLowerCase();
+            var language = "&sc_isegment=" + id('language').value.toLowerCase();
+            var outcome = "&sc_outcome=" + id('outcome').value.toLowerCase();
+            var publisher = "&sc_publisher=" + id('publisher').value.toLowerCase();
+            var emailPublisher = "&sc_publisher=" + id('publisher-email').value.toLowerCase();
+            var product = "&sc_category=" + id('product').value.toLowerCase();
+            var medium = "&sc_medium=" + id('medium').value.toLowerCase();
+            var houseMedium = "&sc_iplace=" + id('medium').value.toLowerCase();
+            var trkcode = "&trk=" + cleanStr(id('trkcode').value);
+            var trkcampaign = "&trkCampaign=" + cleanStr(id('trkcampaign').value);
+            var tokens = "&sc_campaign={{program.name}}&sc_medium=em_{{campaign.id}}";
+            var emailTrk = "&trk=em_{{campaign.id}}";
+            var formValues = [channel, name, emailContent, content, details, region, country, language, outcome, publisher, product, medium, trkcode, trkcampaign];
+            if (id('channel').value === "HA") {
+                formValues.splice(0, 1, houseChannel);
+                formValues.splice(1, 1, houseName);
+                formValues.splice(11, 1, houseMedium);
+                formValues.splice(8, 1);
+                formValues.splice(2, 1);
+            }
+            else if (id('channel').value === "EM") {
+                formValues.splice(3, 1);
+                formValues.splice(1, 0, tokens);
+                formValues.splice(9, 1, emailPublisher);
+                if (formValues.toString().endsWith("&trk=")) {
+                    formValues.splice(13, 0, emailTrk);
+                }
+            }
+            else {
+                formValues.splice(3, 1, houseContent);
+                formValues.splice(2, 1);
+            }
+            var formValuesTrimmed = formValues.map(clearStr);
+            var formValuesStr = formValuesTrimmed.join("");
+            return formValuesStr;
+        }
+        // builds the DA strings for House Ads
+        function houseDA() {
+            id('daChannel').innerHTML += id('channel').value.toLowerCase();
+            id('daLanguage').innerHTML += id('language').value.toLowerCase();
+            id('daCampaign').innerHTML += id('outcome').value.toLowerCase() + "_" + cleanStr(id('name').value);
+            id('daContent').innerHTML += cleanStr(id('content').value);
+            id('daPlacement').innerHTML += cleanStr(id('medium').value);
+            id('daValues').style.display = 'block';
+        }
+        // generates the tracking code
+        function generate() {
+            id('output').value = buildStr();
+            if (id('channel').value === "HA") {
+                houseDA();
+            }
+            else {
+                id('daValues').style.display = 'none';
+            }
+            id('results').style.display = 'block';
+            scrollDown();
+            return false;
+        }
+        // scrolls down to the bottom of the page
+        function scrollDown() {
+            var documentHeight = document.documentElement.offsetHeight;
+            var viewportHeight = window.innerHeight;
+            window.scrollTo(0, documentHeight - viewportHeight);
+        }
+        // copies the output to the user's clipboard
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+        // resets the fields by reloading the page
+        function resetter() {
+            location.reload(true);
+        }
+    </script>
+</head>
+
+<body>
+    <!---------- TOOLKIT -----------><span class="back"><a href="marketing-toolkit.html">&#8592;&nbsp;&nbsp;Back to Toolkit</a></span>
+    <!---------- HEADING ----------->
+    <div class="heading"> <img class="heading-icon" src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_target_1_512x512_Feb-2017.png" />
+        <h1>AWS Tracking Code Generator</h1> </div>
+    <p>Use the tool below to generate a tracking code. For futher documentation, refer to the <a href="https://w.amazon.com/index.php/AWS_Marketing_-_External_Ad_Tracking_Code_Guidelines_%26_Generator">wiki</a>. Only fields with asterisks (<span class="required">*</span>) are required.
+        <br>
+        <br> </p>
+    <form id="form1" onsubmit="return generate();" autocomplete="off">
+        <!---------- MARKETING CHANNEL ----------->
+        <div class="form-container"> <span class="field-name">Marketing Channel<span class="required">*</span>
+            <br> </span>
+            <div class="flex">
+                <div class="form-field-container">
+                    <select class="form-field" id="channel" onchange="channelVal()" required>
+                        <option disabled selected value="">Choose a marketing channel...</option>
+                        <option value="BA">Banner Ads</option>
+                        <option value="EM">Email</option>
+                        <option value="EL">External Link</option>
+                        <option value="HA">House Ads</option>
+                        <option value="PS">Paid Search</option>
+                        <option value="SM">Social Media - Free</option>
+                        <option value="PSM">Social Media - Paid</option>
+                        <option value="TA">Text Ad</option>
+                    </select>
+                </div>
+                <div class="form-field-container hide" id="campaign-type-container">
+                    <select class="form-field" id="campaign-type">
+                        <option disabled selected value="">Choose a campaign type...</option>
+                        <option value="AB">Abandoner</option>
+                        <option value="CERT">Cert - Train</option>
+                        <option value="CS">Cross-Sell</option>
+                        <option value="EV">Event</option>
+                        <option value="ED">Education</option>
+                        <option value="F90D">First 90 Day Adoption </option>
+                        <option value="GC"> Global </option>
+                        <option value="LA">Launch</option>
+                        <option value="LN">Lead Nurture</option>
+                        <option value="NL">NewsLetter</option>
+                        <option value="SERVICENOTICE">Service Notice</option>
+                        <option value="STARTUP">Start Up</option>
+                        <option value="SU">Survey</option>
+                        <option value="t1launch">Tier 1 Launch</option>
+                        <option value="t1event">Tier 1 Event</option>
+                        <option value="TRANS">Transactional </option>
+                        <option value="TRIGGER">Trigger</option>
+                        <option value="WEBINAR">Webinar</option>
+                        <option value="WEON24">Webinar-ON24</option>
+                        <option value="WEW">Webinar - Goto Webinar</option>
+                        <option value="WEA">Webinar - Adobe Connect</option>
+                        <option value="OT">Other</option>
+                    </select>
+                </div>
+                <div class="form-field-container hide" id="campaign-category-container">
+                    <select class="form-field" id="campaign-category">
+                        <option disabled selected value="">Choose a campaign category...</option>
+                        <option value="activate">Activate</option>
+                        <option value="tier1">Launch Tier 1</option>
+                        <option value="nontier1">Launch Non-Tier 1</option>
+                        <option value="reinvent">re:Invent</option>
+                        <option value="summit">Summits</option>
+                        <option value="entsummits">Enterprise Summits</option>
+                        <option value="field">Field Marketing</option>
+                        <option value="sp">Sales Plays</option>
+                        <option value="partnermkt">Partner Marketing</option>
+                        <option value="entmkt">Enterprise Marketing</option>
+                        <option value="awsmp">AWS Marketplace</option>
+                        <option value="OT">Other</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!---------- UNIQUE CAMPAIGN NAME ----------->
+        <div class="form-container" id="name-container">
+            <div class="form-field-container"><span class="field-name">Unique Campaign Name<span class="required">*</span>
+                <br> </span>
+                <input required class="form-field width-100" id="name" type="text" pattern=".{4,}" data-value-missing="A minimum of 4 characters is required." data-pattern-mismatch="A minimum of 4 characters is required." placeholder="A concise description of your campaign; i.e. reinvent_2017" /> </div>
+        </div>
+        <!---------- REGION & COUNTRY ----------->
+        <div class="form-container width-50-50 hide" id="region-country-container">
+            <div class="form-field-container">
+                <div class="width-100"><span class="field-name">Region<span class="required">*</span>
+                    <br> </span>
+                    <select class="form-field" id="region" required>
+                        <option disabled selected value="">Choose a region...</option>
+                        <option value="MULT">Multiple</option>
+                        <option value="APAC">APAC</option>
+                        <option value="CHNA">CHNA</option>
+                        <option value="EMEA">EMEA</option>
+                        <option value="JAPN">JAPN</option>
+                        <option value="NAMER">NAMER</option>
+                        <option value="LATM">LATM</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-field-container">
+                <div class="width-100"><span class="field-name">Country<span class="required">*</span>
+                    <br> </span>
+                    <select class="form-field" id="country" required>
+                        <option disabled selected value="">Choose a country...</option>
+                        <option value="MULT"> Multiple </option>
+                        <option value="Global"> Global </option>
+                        <option value="US">United States</option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="AX">Aland Islands</option>
+                        <option value="AL">Albania</option>
+                        <option value="DZ">Algeria</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="AD">Andorra</option>
+                        <option value="AO">Angola</option>
+                        <option value="AI">Anguilla</option>
+                        <option value="AQ">Antarctica</option>
+                        <option value="AG">Antigua And Barbuda</option>
+                        <option value="AR">Argentina</option>
+                        <option value="AM">Armenia</option>
+                        <option value="AW">Aruba</option>
+                        <option value="AU">Australia</option>
+                        <option value="AT">Austria</option>
+                        <option value="AZ">Azerbaijan</option>
+                        <option value="BS">Bahamas</option>
+                        <option value="BH">Bahrain</option>
+                        <option value="BD">Bangladesh</option>
+                        <option value="BB">Barbados</option>
+                        <option value="BY">Belarus</option>
+                        <option value="BE">Belgium</option>
+                        <option value="BZ">Belize</option>
+                        <option value="BJ">Benin</option>
+                        <option value="BM">Bermuda</option>
+                        <option value="BT">Bhutan</option>
+                        <option value="BO">Bolivia</option>
+                        <option value="BQ">Bonaire, Sint Eustatius And Saba</option>
+                        <option value="BA">Bosnia And Herzegovina</option>
+                        <option value="BW">Botswana</option>
+                        <option value="BV">Bouvet Island</option>
+                        <option value="BR">Brazil</option>
+                        <option value="IO">British Indian Ocean Territory</option>
+                        <option value="BN">Brunei Darussalam</option>
+                        <option value="BG">Bulgaria</option>
+                        <option value="BF">Burkina Faso</option>
+                        <option value="BI">Burundi</option>
+                        <option value="KH">Cambodia</option>
+                        <option value="CM">Cameroon</option>
+                        <option value="CA">Canada</option>
+                        <option value="CV">Cape Verde</option>
+                        <option value="KY">Cayman Islands</option>
+                        <option value="CF">Central African Republic</option>
+                        <option value="TD">Chad</option>
+                        <option value="CL">Chile</option>
+                        <option value="CN">China</option>
+                        <option value="CX">Christmas Island</option>
+                        <option value="CC">Cocos (Keeling) Islands</option>
+                        <option value="CO">Colombia</option>
+                        <option value="KM">Comoros</option>
+                        <option value="CG">Congo</option>
+                        <option value="CK">Cook Islands</option>
+                        <option value="CR">Costa Rica</option>
+                        <option value="CI">Cote Divoire</option>
+                        <option value="HR">Croatia</option>
+                        <option value="CU">Cuba</option>
+                        <option value="CW">Curacao</option>
+                        <option value="CY">Cyprus</option>
+                        <option value="CZ">Czech Republic</option>
+                        <option value="CD">Democratic Republic Of The Congo</option>
+                        <option value="DK">Denmark</option>
+                        <option value="DJ">Djibouti</option>
+                        <option value="DM">Dominica</option>
+                        <option value="DO">Dominican Republic</option>
+                        <option value="EC">Ecuador</option>
+                        <option value="EG">Egypt</option>
+                        <option value="SV">El Salvador</option>
+                        <option value="GQ">Equatorial Guinea</option>
+                        <option value="ER">Eritrea</option>
+                        <option value="EE">Estonia</option>
+                        <option value="ET">Ethiopia</option>
+                        <option value="FK">Falkland Islands (Malvinas)</option>
+                        <option value="FO">Faroe Islands</option>
+                        <option value="FJ">Fiji</option>
+                        <option value="FI">Finland</option>
+                        <option value="FR">France</option>
+                        <option value="GF">French Guiana</option>
+                        <option value="PF">French Polynesia</option>
+                        <option value="TF">French Southern Territories</option>
+                        <option value="GA">Gabon</option>
+                        <option value="GM">Gambia</option>
+                        <option value="GE">Georgia</option>
+                        <option value="DE">Germany</option>
+                        <option value="GH">Ghana</option>
+                        <option value="GI">Gibraltar</option>
+                        <option value="GB">Great Britain</option>
+                        <option value="GR">Greece</option>
+                        <option value="GL">Greenland</option>
+                        <option value="GD">Grenada</option>
+                        <option value="GP">Guadeloupe</option>
+                        <option value="GU">Guam</option>
+                        <option value="GT">Guatemala</option>
+                        <option value="GG">Guernsey</option>
+                        <option value="GN">Guinea</option>
+                        <option value="GW">Guinea-Bissau</option>
+                        <option value="GY">Guyana</option>
+                        <option value="HT">Haiti</option>
+                        <option value="HM">Heard Island And Mcdonald Islands</option>
+                        <option value="VA">Holy See (Vatican City State)</option>
+                        <option value="HN">Honduras</option>
+                        <option value="HK">Hong Kong</option>
+                        <option value="HU">Hungary</option>
+                        <option value="IS">Iceland</option>
+                        <option value="IN">India</option>
+                        <option value="ID">Indonesia</option>
+                        <option value="IR">Iran, Islamic Republic Of</option>
+                        <option value="IQ">Iraq</option>
+                        <option value="IE">Ireland</option>
+                        <option value="IM">Isle Of Man</option>
+                        <option value="IL">Israel</option>
+                        <option value="IT">Italy</option>
+                        <option value="JM">Jamaica</option>
+                        <option value="JP">Japan</option>
+                        <option value="JE">Jersey</option>
+                        <option value="JO">Jordan</option>
+                        <option value="KZ">Kazakhstan</option>
+                        <option value="KE">Kenya</option>
+                        <option value="KI">Kiribati</option>
+                        <option value="KR">Korea</option>
+                        <option value="KP">Korea, Democratic Peoples Republic Of</option>
+                        <option value="KW">Kuwait</option>
+                        <option value="KG">Kyrgyzstan</option>
+                        <option value="LA">Lao Peoples Democratic Republic</option>
+                        <option value="LV">Latvia</option>
+                        <option value="LB">Lebanon</option>
+                        <option value="LS">Lesotho</option>
+                        <option value="LR">Liberia</option>
+                        <option value="LY">Libyan Arab Jamahiriya</option>
+                        <option value="LI">Liechtenstein</option>
+                        <option value="LT">Lithuania</option>
+                        <option value="LU">Luxembourg</option>
+                        <option value="MO">Macao</option>
+                        <option value="MK">Macedonia, The Former Yugoslav Republic Of</option>
+                        <option value="MG">Madagascar</option>
+                        <option value="MW">Malawi</option>
+                        <option value="MY">Malaysia</option>
+                        <option value="MV">Maldives</option>
+                        <option value="ML">Mali</option>
+                        <option value="MT">Malta</option>
+                        <option value="MH">Marshall Islands</option>
+                        <option value="MQ">Martinique</option>
+                        <option value="MR">Mauritania</option>
+                        <option value="MU">Mauritius</option>
+                        <option value="YT">Mayotte</option>
+                        <option value="MX">Mexico</option>
+                        <option value="FM">Micronesia, Federated States Of</option>
+                        <option value="MD">Moldova, Republic Of</option>
+                        <option value="MC">Monaco</option>
+                        <option value="MN">Mongolia</option>
+                        <option value="ME">Montenegro</option>
+                        <option value="MS">Montserrat</option>
+                        <option value="MA">Morocco</option>
+                        <option value="MZ">Mozambique</option>
+                        <option value="MM">Myanmar</option>
+                        <option value="NA">Namibia</option>
+                        <option value="NR">Nauru</option>
+                        <option value="NP">Nepal</option>
+                        <option value="NL">Netherlands</option>
+                        <option value="AN">Netherlands Antilles</option>
+                        <option value="NC">New Caledonia</option>
+                        <option value="NZ">New Zealand</option>
+                        <option value="NI">Nicaragua</option>
+                        <option value="NE">Niger</option>
+                        <option value="NG">Nigeria</option>
+                        <option value="NU">Niue</option>
+                        <option value="NF">Norfolk Island</option>
+                        <option value="MP">Northern Mariana Islands</option>
+                        <option value="NO">Norway</option>
+                        <option value="OM">Oman</option>
+                        <option value="PK">Pakistan</option>
+                        <option value="PW">Palau</option>
+                        <option value="PS">Palestinian Territory, Occupied</option>
+                        <option value="PA">Panama</option>
+                        <option value="PG">Papua New Guinea</option>
+                        <option value="PY">Paraguay</option>
+                        <option value="PE">Peru</option>
+                        <option value="PH">Philippines</option>
+                        <option value="PN">Pitcairn</option>
+                        <option value="PL">Poland</option>
+                        <option value="PT">Portugal</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="QA">Qatar</option>
+                        <option value="RE">Reunion</option>
+                        <option value="RO">Romania</option>
+                        <option value="RU">Russia</option>
+                        <option value="RW">Rwanda</option>
+                        <option value="BL">Saint Barthelemy</option>
+                        <option value="SH">Saint Helena, Ascension And Tristan Da Cunha</option>
+                        <option value="KN">Saint Kitts And Nevis</option>
+                        <option value="LC">Saint Lucia</option>
+                        <option value="MF">Saint Martin (French Part)</option>
+                        <option value="PM">Saint Pierre And Miquelon</option>
+                        <option value="VC">Saint Vincent And The Grenadines</option>
+                        <option value="WS">Samoa</option>
+                        <option value="SM">San Marino</option>
+                        <option value="ST">Sao Tome And Principe</option>
+                        <option value="SA">Saudi Arabia</option>
+                        <option value="SN">Senegal</option>
+                        <option value="RS">Serbia</option>
+                        <option value="CS">Serbia And Montenegro</option>
+                        <option value="SC">Seychelles</option>
+                        <option value="SL">Sierra Leone</option>
+                        <option value="SG">Singapore</option>
+                        <option value="SX">Sint Maarten (Dutch Part)</option>
+                        <option value="SK">Slovakia</option>
+                        <option value="SI">Slovenia</option>
+                        <option value="SB">Solomon Islands</option>
+                        <option value="SO">Somalia</option>
+                        <option value="ZA">South Africa</option>
+                        <option value="GS">South Georgia And The South Sandwich Islands</option>
+                        <option value="SS">South Sudan</option>
+                        <option value="ES">Spain</option>
+                        <option value="LK">Sri Lanka</option>
+                        <option value="SD">Sudan</option>
+                        <option value="SR">Suriname</option>
+                        <option value="SJ">Svalbard And Jan Mayen</option>
+                        <option value="SZ">Swaziland</option>
+                        <option value="SE">Sweden</option>
+                        <option value="CH">Switzerland</option>
+                        <option value="SY">Syrian Arab Republic</option>
+                        <option value="TW">Taiwan</option>
+                        <option value="TJ">Tajikistan</option>
+                        <option value="TZ">Tanzania</option>
+                        <option value="TH">Thailand</option>
+                        <option value="TL">Timor-Leste</option>
+                        <option value="TG">Togo</option>
+                        <option value="TK">Tokelau</option>
+                        <option value="TO">Tonga</option>
+                        <option value="TT">Trinidad And Tobago</option>
+                        <option value="TN">Tunisia</option>
+                        <option value="TR">Turkey</option>
+                        <option value="TM">Turkmenistan</option>
+                        <option value="TC">Turks And Caicos Islands</option>
+                        <option value="TV">Tuvalu</option>
+                        <option value="UG">Uganda</option>
+                        <option value="UA">Ukraine</option>
+                        <option value="AE">United Arab Emirates</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="UM">United States Minor Outlying Islands</option>
+                        <option value="UY">Uruguay</option>
+                        <option value="UZ">Uzbekistan</option>
+                        <option value="VU">Vanuatu</option>
+                        <option value="VE">Venezuela</option>
+                        <option value="VN">Viet Nam</option>
+                        <option value="VG">Virgin Islands, British</option>
+                        <option value="VI">Virgin Islands, U.S.</option>
+                        <option value="WF">Wallis And Futuna</option>
+                        <option value="EH">Western Sahara</option>
+                        <option value="YE">Yemen</option>
+                        <option value="ZM">Zambia</option>
+                        <option value="ZW">Zimbabwe</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!---------- OUTCOME ----------->
+        <div class="form-container">
+            <div class="form-field-container"><span class="field-name">Outcome<span class="required">*</span>
+                <br> </span>
+                <select class="form-field" id="outcome" required>
+                    <option disabled selected value="">Choose an outcome...</option>
+                    <option value="aware"> Brand Awareness </option>
+                    <option value="entadopt"> Broad Enterprise Marketing </option>
+                    <option value="devadopt"> Developer Marketing - Adoption </option>
+                    <option value="devstrategy"> Developer Marketing - Strategic Services </option>
+                    <option value="entstrategy"> Enterprise - Strategic Services </option>
+                    <option value="event"> Events </option>
+                    <option value="gamedev"> Gamedev </option>
+                    <option value="home_key"> Home &amp; Key Pages </option>
+                    <option value="infra"> Infrastructure </option>
+                    <option value="launch"> Launch Communications </option>
+                    <option value="ln"> Lead Management &amp; Nurturing </option>
+                    <option value="multi"> Multi - Outcome </option>
+                    <option value="acq"> New Customer Acquisition </option>
+                    <option value="adopt_f90d"> New Customer Adoption (First 90 Days) </option>
+                    <option value="public"> Public Sector Adoption </option>
+                    <option value="startup"> Startup Marketing </option>
+                    <option value="Other"> Other </option>
+                </select>
+            </div>
+        </div>
+        <!---------- OPTIONAL FORM FIELDS ----------->
+        <div class="form-container">
+            <div class="form-field-container">
+                <input class="form-field" id="optional" type="checkbox" onchange="revealOptional()" /> Reveal optional form fields</div>
+        </div>
+        <div class="hide" id="optional-container">
+            <!---------- PRIMARY CONTENT & ADDITIONAL DETAILS ----------->
+            <div class="form-container width-50-50" id="content-details-container">
+                <div class="form-field-container">
+                    <div style="width: calc(100% - 25px);"><span class="field-name">Primary Content<br></span>
+                        <input class="form-field width-100" id="content" type="text" placeholder="The messaging/concept unique to this campaign" /> </div>
+                </div>
+                <div class="form-field-container"><span class="field-name">Additional Details<br></span>
+                    <input class="form-field width-100" id="details" type="text" placeholder="Additional details you'd like to track" /> </div>
+            </div>
+            <!---------- LANGUAGE ----------->
+            <div class="form-field-container hide" id="language-container"><span class="field-name">Language<br> </span>
+                <select class="form-field" id="language">
+                    <option disabled selected value="">Choose a language...</option>
+                    <option value='TW'>Chinese (Traditional)</option>
+                    <option value='EN'>English</option>
+                    <option value='FR'>French</option>
+                    <option value='DE'>German</option>
+                    <option value='IT'>Italian</option>
+                    <option value='JP'>Japanese</option>
+                    <option value='KO'>Korean</option>
+                    <option value='PT'>Portugese</option>
+                    <option value='RU'>Russian</option>
+                    <option value='ES'>Spanish</option>
+                </select>
+            </div>
+            <!---------- PUBLISHER ----------->
+            <div class="form-container hide" id="publisher-container">
+                <div class="form-field-container"><span class="field-name">Publisher<br> </span>
+                    <select class="form-field" id="publisher">
+                        <option disabled selected value="">Choose a publisher...</option>
+                        <option value="other">Other</option>
+                        <option value="amazon_media">amazon_media</option>
+                        <option value="bizo">bizo</option>
+                        <option value="buzzword_jp">buzzword_jp</option>
+                        <option value="captivate">captivate</option>
+                        <option value="facebook_jp">facebook_jp</option>
+                        <option value="inmobi">inmobi</option>
+                        <option value="linkedin">linkedin</option>
+                        <option value="sourceforge">sourceforge</option>
+                        <option value="stackoverflow">stackoverflow</option>
+                        <option value="techcrunch">techcrunch</option>
+                        <option value="techmeme">techmeme</option>
+                        <option value="techtarget">techtarget</option>
+                    </select>
+                </div>
+            </div>
+            <!---------- PUBLISHER (EMAIL) ----------->
+            <div class="form-container hide" id="email-publisher-container">
+                <div class="form-field-container"><span class="field-name">Publisher
+                <br> </span>
+                    <select class="form-field" id="publisher-email">
+                        <option disabled selected value="">Choose a publisher...</option>
+                        <option value="other">Other</option>
+                        <option value="aws">AWS</option>
+                        <option value="bizo">Bizo</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="techtarget">TechTarget</option>
+                    </select>
+                </div>
+            </div>
+            <!---------- PRODUCT ----------->
+            <div class="form-container hide" id="product-container">
+                <div class="form-field-container"> <span class="field-name">Product<br> </span>
+                    <select class="form-field" id="product">
+                        <option disabled selected value="">Choose a product...</option>
+                        <option value="Other"> Other </option>
+                        <option value="MULT"> Multiple Products </option>
+                        <option value="EBS">AWS - EBS </option>
+                        <option value="ALEXA"> Alexa </option>
+                        <option value="ELASTICACHE"> Amazon ElastiCache </option>
+                        <option value="LIGHTSAIL"> Amazon Lightsail </option>
+                        <option value="QUICKSIGHT"> Amazon QuickSight </option>
+                        <option value="AMAZON_REGISTRAR"> Amazon Registrar </option>
+                        <option value="APN_REVENUE"> APN Revenue </option>
+                        <option value="BANDWIDTH"> AWS - Bandwidth </option>
+                        <option value="DEV_PAY"> AWS - DevPay </option>
+                        <option value="MARKETPLACE"> AWS - Marketplace </option>
+                        <option value="NON_REVENUE_PRODUCT_LINE"> AWS - Non Revenue Product Line </option>
+                        <option value="PAID_SUPPORT"> AWS - Paid Support </option>
+                        <option value="RDS"> AWS - RDS </option>
+                        <option value="REDSHIFT"> AWS - Redshift </option>
+                        <option value="VPC"> AWS - VPC </option>
+                        <option value="CLOUDSEARCH"> AWS CloudSearch </option>
+                        <option value="IOT_SERVICES"> AWS IoT Services </option>
+                        <option value="MARKETING_SERVICES"> AWS Marketing Services </option>
+                        <option value="MOBILE_SERVICES"> AWS Mobile Services </option>
+                        <option value="PROFESSIONAL_SERVICES"> AWS Professional Services </option>
+                        <option value="AWS_TRAINING"> AWS Training </option>
+                        <option value="BJS_SINNET_IDC"> BJS SINNET IDC </option>
+                        <option value="BJS_SINNET_ISP"> BJS SINNET ISP </option>
+                        <option value="CN_NET_CENTER"> ChinaNetCenter Services </option>
+                        <option value="CLOUDFRONT"> Cloudfront </option>
+                        <option value="EC2"> EC2 </option>
+                        <option value="EC2_WINDOWS"> EC2 Windows </option>
+                        <option value="ELASTIC_MAPREDUCE"> Elastic MapReduce </option>
+                        <option value="MANAGED_CLOUD"> Managed Cloud </option>
+                        <option value="AWS_COMPUTE_APPS"> New AWS Compute Apps </option>
+                        <option value="S3"> S3 </option>
+                        <option value="SES"> Simple Email Service </option>
+                        <option value="SIMPLE_DB"> SimpleDB </option>
+                        <option value="SINNET_SERVICES"> Sinnet Services </option>
+                        <option value="SQS"> SQS </option>
+                        <option value="US_SALES_TAX"> USSalesTax </option>
+                    </select>
+                </div>
+            </div>
+            <!---------- MEDIUM/PLACE ----------->
+            <div class="form-container hide" id="medium-container">
+                <div class="form-field-container"><span class="field-name">Medium/Place<br /></span>
+                    <input class="form-field width-100" id="medium" type="text" placeholder="The specific location of your link on the site; i.e., hero, footer, etc." /> </div>
+            </div>
+            <!---------- SALESFORCE CAMPAIGN ----------->
+            <div class="form-container width-50-50">
+                <div class="form-field-container">
+                    <div style="width: calc(100% - 25px);"><span class="field-name">Salesforce TRK Code<br> </span>
+                        <input class="form-field width-100" id="trkcode" type="text" placeholder="Referred to as Website Referral in Salesforce" /> </div>
+                </div>
+                <div class="form-field-container"><span class="field-name">Salesforce TRK Campaign<br> </span>
+                    <input class="form-field width-100" id="trkcampaign" type="text" placeholder="Referred to as data-trk-campaign on the form in CQ5" /> </div>
+            </div>
+        </div>
+        <!---------- GENERATE & RESET ----------->
+        <div class="form-container">
+            <div class="form-field-container" id="generate-reset">
+                <input required class="form-field" id="generator" type="submit" value="Generate" onsubmit="return generate();" />
+                <input required class="form-field" id="reset" type="button" value="Reset" onclick="return resetter()"> </div>
+        </div>
+    </form>
+    <!---------- OUTPUT ----------->
+    <div id="results">
+        <div class="output-container"> <span>Append the following tracking code to the end of your URL:</span>
+            <div class="output-buttons">
+                <a id="tooltip-copy" title="Copy to clipboard"> <img src="images/GEN_copy_512x512_May-2017.png" class="output-icon" onclick="copyToClipboard('#output')" /> </a>
+            </div>
+        </div> <pre><output id="output"></output></pre> </div>
+    <div class="hide" id="daValues">Paste the values below under Data Attributes:
+        <br>
+        <br>
+        <div> <pre><output id="daChannel">channel=</output></pre> <pre><output id="daLanguage">language=</output></pre> <pre><output id="daCampaign">campaign=</output></pre> <pre><output id="daContent">content=</output></pre> <pre><output id="daPlacement">placement=</output></pre> </div>
+    </div>
+</body>
+
+</html>

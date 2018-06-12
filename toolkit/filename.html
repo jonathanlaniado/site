@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<!-- Made with <3 by Jonathan Laniado (laniadoj@).-->
+
+<head>
+    <title>Marketing Toolkit &ndash; AWS Design Studio Filename Generator</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-101024663-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script>
+        // validates the form
+        var wrapper = hyperform(window);
+        // instantiates document.getElementById()
+        var id = function(id) {
+            return document.getElementById(id);
+        };
+        // hides the appropriate form fields depending on whether the user's asset is an image/video
+        function yesnoCheck() {
+            if (id('isNotImageOrVideo').checked) {
+                id('dimensions').style.display = 'none';
+                id('width').required = false;
+                id('height').required = false;
+                id('width').value = NaN;
+                id('height').value = NaN;
+                id('output').value = '';
+            } else {
+                id('output').value = '';
+                id('dimensions').style.display = 'flex';
+                id('width').required = true;
+                id('height').required = true;
+            }
+        }
+        // determines whether the file is for an event
+        window.onload = function isForEvent() {
+            var category = id('category');
+            category.onchange = function() {
+                if (category.value === "EV") {
+                    id('event-date').style.display = 'flex';
+                    id('month').required = true;
+                    id('year').required = true;
+                    return true;
+                } else {
+                    id('event-date').style.display = 'none';
+                    id('month').required = false;
+                    id('year').required = false;
+                    return false;
+                }
+            }
+        }
+        // generates the filename based upon the form fields
+        function generate() {
+            var isImageOrVideo = id('isImageOrVideo').checked;
+            var category = id('category').value;
+            // correctly formats the dimensions if the asset is an image/video; otherwise, no dimensions are returned
+            if (id('isNotImageOrVideo').checked) {
+                yesnoCheck();
+                var dimensions = "";
+            } else {
+                var width = id('width').value;
+                var height = id('height').value;
+                var dimensions = parseInt(width) + "x" + parseInt(height);
+            }
+            // applies the necessary trims to the description
+            var description = id('description').value.toLowerCase();
+            var descriptionTrimmed = description.replace(/\W/g, '-');
+            // gets the event's date if the asset is for an event; otherwise, today's date in this format: MMM_YYYY
+            if (id('category').value === "EV") {
+                var monthEvent = id('month').value;
+                var yearEvent = id('year').value;
+                var dateEvent = monthEvent + "-" + yearEvent;
+                var dateToday = "";
+            } else {
+                var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                var date = new Date();
+                var dateToday = monthNames[date.getMonth()] + "-" + date.getFullYear();
+                var dateEvent = "";
+            }
+            // cleans and generates the final string
+            var str = category + "_" + descriptionTrimmed + "_" + dimensions + "_" + dateToday + dateEvent;
+            var cleanStr = str.replace(/[_]{2,}/g, '_').replace(/[-]{2,}/g, '-');
+            id('output').value = cleanStr;
+            // reveals the output's results
+            id('results').style.display = 'block';
+            // scrolls down to the bottom of the page and generates the name
+            var documentHeight = document.documentElement.offsetHeight;
+            var viewportHeight = window.innerHeight;
+            window.scrollTo(0, documentHeight - viewportHeight);
+            return false;
+        }
+        // copies the output to the user's clipboard
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+        }
+        // resets the fields by reloading the page
+        function resetter() {
+            location.reload(true);
+        }
+
+    </script>
+</head>
+
+<body>
+    <!---------- TOOLKIT -----------><span class="back"><a href="marketing-toolkit.html">&#8592;&nbsp;&nbsp;Back to Toolkit</a></span>
+    <!---------- HEADING ----------->
+    <div class="heading"> <img class="heading-icon" src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_file_512x512_Feb-2017.png" />
+        <h1>AWS Design Studio Filename Generator</h1>
+    </div>
+    <p>Use the tool below or follow the naming convention outlined in <a href="https://w.amazon.com/index.php/AWS/Teams/Email/Marketo_Training/Email_Best_Practices" target="_blank">this wiki</a> whenever you upload a file to the Design Studio. All fields are required.
+        <br>
+        <br> </p>
+    <form id="form1" onsubmit="return generate();" autocomplete="off">
+        <!---------- IMAGE/VIDEO ----------->
+        <div class="form-container">
+            <div class="form-field-container"><span><span class="field-name">Is your file an image/video?<br></span>
+                <div class="form-field">
+                    <input type="radio" name="function" id="isImageOrVideo" onclick="return yesnoCheck();" required/> Yes&nbsp;&nbsp;
+                    <input type="radio" name="function" id="isNotImageOrVideo" onclick="return yesnoCheck();" /> No</div>
+                </span>
+            </div>
+        </div>
+        <!---------- DIMENSIONS ----------->
+        <div class="form-container">
+            <div class="form-field-container" id="dimensions" name="dimensions">
+                <div class="width-100" id="width-container"><span class="field-name">Width<br></span>
+                    <input required class="form-field width-100" name="width" id="width" type="number" placeholder="Width in pixels" min="1" max="1000000" data-bad-input="Please enter an integer without commas." /> </div>
+                <div class="form-field-spacer"></div>
+                <div class="width-100" id="height-container"><span class="field-name">Height<br></span>
+                    <input required class="form-field width-100" name="height" id="height" type="number" placeholder="Height in pixels" min="1" max="1000000" data-bad-input="Please enter an integer without commas." /> </div>
+            </div>
+        </div>
+        <!---------- FUNCTION ----------->
+        <div class="form-container">
+            <div class="form-field-container"><span class="field-name">Function<br></span>
+                <select class="form-field" id="category" required>
+                    <option value="" disabled selected>Select a function...</option>
+                    <option value="DEV">Developer Marketing &ndash; DEV</option>
+                    <option value="EV">Event &ndash; EV</option>
+                    <option value="GEN">General Marketing &ndash; GEN</option>
+                    <option value="AWSMP">Marketplace &ndash; AWSMP</option>
+                    <option value="PTNR">Partner &ndash; PTNR</option>
+                    <option value="AWSPS">Public Sector &ndash; AWSPS</option>
+                    <option value="RN">Release Notes &ndash; RN</option>
+                    <option value="SUM">Startup Marketing &ndash; SUM</option>
+                </select>
+            </div>
+        </div>
+        <!---------- EVENT DATE ----------->
+        <div class="form-container">
+            <div class="form-field-container" id="event-date">
+                <div class="width-100" id="month-container"><span class="field-name">Event Month<br></span>
+                    <select class="form-field" id="month" required>
+                        <option value="" disabled selected>Select a month...</option>
+                        <option value="Jan">January</option>
+                        <option value="Feb">February</option>
+                        <option value="Mar">March</option>
+                        <option value="Apr">April</option>
+                        <option value="May">May</option>
+                        <option value="Jun">June</option>
+                        <option value="Jul">July</option>
+                        <option value="Aug">August</option>
+                        <option value="Sep">September</option>
+                        <option value="Oct">October</option>
+                        <option value="Nov">November</option>
+                        <option value="Dec">December</option>
+                    </select>
+                </div>
+                <div class="form-field-spacer"></div>
+                <div class="width-100" id="year-container"><span class="field-name">Event Year<br></span>
+                    <select class="form-field" id="year" required>
+                        <option value="" disabled selected>Select a year...</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!---------- DESCRIPTION ----------->
+        <div class="form-container">
+            <div class="form-field-container"><span class="field-name">Description<br></span>
+                <input required class="form-field width-100" id="description" type="text" pattern=".{4,}" placeholder="Minimum: 4 characters" data-value-missing="A minimum of 4 characters is required." data-pattern-mismatch="A minimum of 4 characters is required." /> </div>
+        </div>
+        <!---------- GENERATE & RESET ----------->
+        <div class="form-container">
+            <div class="form-field-container" id="generate-reset">
+                <input class="form-field" id="generator" type="submit" value="Generate" onsubmit="return generate();" />
+                <input class="form-field" id="reset" type="button" value="Reset" onclick="return resetter()"> </div>
+        </div>
+    </form>
+    <!---------- OUTPUT ----------->
+    <div id="results">
+        <div class="output-container"> <span>Your asset's filename:</span>
+            <div class="output-buttons">
+                <a id="tooltip-copy" title="Copy to clipboard"> <img src="https://pages.awscloud.com/rs/112-TZM-766/images/GEN_copy_512x512_May-2017.png" class="output-icon" onclick="copyToClipboard('#output')" /> </a>
+            </div>
+        </div>
+        <pre><output id="output"></output></pre> </div>
+</body>
+
+</html>
