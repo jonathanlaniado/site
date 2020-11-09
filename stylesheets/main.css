@@ -26,6 +26,10 @@
   box-sizing: inherit;
 }
 
+html {
+  background-image: url("https://raw.githubusercontent.com/jonathanlaniado/site/master/assets/backgrounds/3840x2160-seasons.jpg"); 
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "SFNSText", "Roboto", '.HelveticaNeueDeskInterface-Light', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
