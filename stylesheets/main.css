@@ -26,7 +26,7 @@
   box-sizing: inherit;
 }
 
-html {
+html#home {
   background-image: url("https://raw.githubusercontent.com/jonathanlaniado/site/master/assets/backgrounds/3840x2160-seasons.jpg"); 
 }
 
